@@ -5,7 +5,7 @@ import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/onboardeing/widgets/my_indicator_widget.dart';
 
 class OnboardPage extends StatefulWidget {
-  const OnboardPage({Key? key}) : super(key: key);
+  const OnboardPage({Key? key }) : super(key: key);
 
   @override
   State<OnboardPage> createState() => _OnboardPageState();

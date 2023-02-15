@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:qazo_namaz/core/utils/colors.dart';
+import 'package:provider/provider.dart';
+import 'package:qazo_namaz/features/common/controllers/controller.dart';
 import 'package:qazo_namaz/features/common/widgets/w_app_bar.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/ehtilam/widgets/w_progres_indicator.dart';
 import 'package:qazo_namaz/features/ehtilam/views/namaz_start_screen.dart';
 
 class EhtilamScreen extends StatefulWidget {
-  final DateTime data;
-  const EhtilamScreen({super.key, required this.data});
+  const EhtilamScreen({super.key});
 
   @override
   State<EhtilamScreen> createState() => _EhtilamScreenState();
@@ -49,7 +49,7 @@ class _EhtilamScreenState extends State<EhtilamScreen> {
                 width: double.infinity,
                 height: 250,
                 child: CupertinoDatePicker(
-                  minimumYear: widget.data.year + 8,
+                  // minimumYear: context.watch<Counter>().dataBir.year + 8,
                   mode: CupertinoDatePickerMode.date,
                   onDateTimeChanged: (val) {
                     setState(() {
@@ -64,7 +64,6 @@ class _EhtilamScreenState extends State<EhtilamScreen> {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => NamazStartScreen(
                             hayz: hayz,
-                            data: widget.data,
                           )));
                 },
                 title: '',

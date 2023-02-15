@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:qazo_namaz/assets/icons/icons.dart';
+import 'package:qazo_namaz/features/common/controllers/controller.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/ehtilam/widgets/w_progres_indicator.dart';
 import 'package:qazo_namaz/features/ehtilam/views/ehtilam_screen.dart';
@@ -16,9 +18,9 @@ class BirthDayScreen extends StatefulWidget {
 class _BirthDayScreenState extends State<BirthDayScreen> {
   DateTime date = DateTime.now();
 
-
   @override
   Widget build(BuildContext context) {
+    final state = context.read<Counter>();
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -53,10 +55,7 @@ class _BirthDayScreenState extends State<BirthDayScreen> {
                   child: CupertinoDatePicker(
                     mode: CupertinoDatePickerMode.date,
                     onDateTimeChanged: (val) {
-                      setState(() {
-                        date = val;
-                      });
-                      print(date);
+                      state.dateTimeChange(val);
                     },
                   ),
                 ),
@@ -65,7 +64,6 @@ class _BirthDayScreenState extends State<BirthDayScreen> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => EhtilamScreen(
-                              data: date,
                             )));
                   },
                   title: '',

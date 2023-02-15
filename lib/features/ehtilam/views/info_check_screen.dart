@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qazo_namaz/features/common/controllers/controller.dart';
 import 'package:qazo_namaz/features/common/widgets/w_app_bar.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/ehtilam/views/information_container.dart';
@@ -43,7 +45,7 @@ class InfoChkScreen extends StatelessWidget {
               ),
               const Spacer(),
               InformationContainer(
-                data: data,
+                data: context.watch<Counter>().dataBir,
                 hayz: hayz,
                 namoz: namoz,
               ),

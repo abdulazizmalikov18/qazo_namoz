@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:qazo_namaz/core/utils/colors.dart';
 import 'package:qazo_namaz/features/common/widgets/w_app_bar.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/ehtilam/widgets/w_progres_indicator.dart';
 import 'package:qazo_namaz/features/ehtilam/views/info_check_screen.dart';
 
 class NamazStartScreen extends StatefulWidget {
-  final DateTime data;
   final DateTime hayz;
-  const NamazStartScreen({super.key, required this.data, required this.hayz});
+  const NamazStartScreen({super.key, required this.hayz});
 
   @override
   State<NamazStartScreen> createState() => _NamazStartScreenState();
@@ -50,7 +48,7 @@ class _NamazStartScreenState extends State<NamazStartScreen> {
                 width: double.infinity,
                 height: 250,
                 child: CupertinoDatePicker(
-                  minimumYear: widget.data.year + 3,
+                  // minimumYear:  context.watch<Counter>().dataBir.year + 3,
                   initialDateTime: namoz,
                   mode: CupertinoDatePickerMode.date,
                   onDateTimeChanged: (val) {
@@ -65,7 +63,7 @@ class _NamazStartScreenState extends State<NamazStartScreen> {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => InfoChkScreen(
-                            data: widget.data,
+                            data: namoz,
                             namoz: namoz,
                             hayz: widget.hayz,
                           )));
