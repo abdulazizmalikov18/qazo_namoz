@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:wave/config.dart';
+import 'package:wave/wave.dart';
 
 class WCalendar extends StatefulWidget {
   const WCalendar({
@@ -6,9 +9,13 @@ class WCalendar extends StatefulWidget {
     required this.selectedDate,
     required this.year,
     required this.month,
+    required this.width,
+    required this.onTap,
   });
   final DateTime selectedDate;
   final int year, month;
+  final double width;
+  final VoidCallback onTap;
 
   @override
   State<WCalendar> createState() => _WCalendarState();
@@ -17,62 +24,54 @@ class WCalendar extends StatefulWidget {
 class _WCalendarState extends State<WCalendar> {
   @override
   Widget build(BuildContext context) {
-    DateTime firstDayOfMonth = DateTime(widget.year, widget.month, 1);
-    int daysInMonth = DateTime(widget.year, widget.month + 1, 0).day;
-    int startingWeekday = firstDayOfMonth.weekday;
+    return Table(
+      children: List<TableRow>.generate(
+        5, // number of rows
+        (i) => TableRow(
+          children: List<Widget>.generate(
+            7, // number of columns
+            (j) {
+              final date = DateTime(
+                widget.selectedDate.year,
+                widget.selectedDate.month,
+                (i * 7) + j + 1 - widget.selectedDate.weekday,
+              );
 
-    List<Widget> rows = [];
-    List<Widget> cells = [];
-
-    // Add empty cells for weekdays before the first day of the month
-    for (int i = 1; i < startingWeekday; i++) {
-      cells.add(Container());
-    }
-
-    // Add cells for each day of the month
-    for (int i = 1; i <= daysInMonth; i++) {
-      // DateTime date = DateTime(widget.year, widget.month, i);
-      bool isSelected = widget.selectedDate.year == widget.year &&
-          widget.selectedDate.month == widget.month &&
-          widget.selectedDate.day == i;
-      cells.add(
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            height: 50,
-            width: MediaQuery.of(context).size.width / 7,
-            alignment: Alignment.center,
-            decoration: isSelected
-                ? BoxDecoration(
-                    border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.amber,
-                  )
-                : BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    color: Colors.blue,
+              return InkWell(
+                onTap: widget.onTap,
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: date.month == widget.selectedDate.month
+                        ? Colors.grey.shade300
+                        : Colors.transparent,
                   ),
-            child: Center(child: Text('$i')),
+                  margin: const EdgeInsets.all(2),
+                  alignment: Alignment.bottomRight,
+                  child: Stack(
+                    children: [
+                      if (date.month == widget.selectedDate.month)
+                        Lottie.asset(
+                          'assets/lottils/wave.json',
+                          height: 50,
+                          width: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      Positioned(
+                        bottom: 8,
+                        right: 8,
+                        child: Text(date.day.toString()),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
         ),
-      );
-
-      // If we've reached the end of the week, add the row to the list of rows
-      if ((i + startingWeekday - 1) % 7 == 0 || i == daysInMonth) {
-        rows.add(
-          Row(
-            mainAxisAlignment: i != daysInMonth
-                ? MainAxisAlignment.end
-                : MainAxisAlignment.start,
-            children: List.from(cells),
-          ),
-        );
-        cells.clear();
-      }
-    }
-
-    return Column(
-      children: List.from(rows),
+      ),
     );
   }
 }
