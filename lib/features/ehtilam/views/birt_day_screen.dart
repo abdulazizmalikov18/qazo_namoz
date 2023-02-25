@@ -62,9 +62,11 @@ class _BirthDayScreenState extends State<BirthDayScreen> {
                 const Spacer(),
                 WButton(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => EhtilamScreen(
-                            )));
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const EhtilamScreen(),
+                      ),
+                    );
                   },
                   title: '',
                   icons: const Icon(
