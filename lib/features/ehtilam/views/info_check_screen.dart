@@ -29,7 +29,7 @@ class InfoChkScreen extends StatelessWidget {
                   'Tasdiqlash',
                   style: Theme.of(context)
                       .textTheme
-                      .bodyText1!
+                      .bodyLarge!
                       .copyWith(fontSize: 24),
                   textAlign: TextAlign.center,
                 ),
@@ -40,7 +40,7 @@ class InfoChkScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2!
+                    .bodyMedium!
                     .copyWith(fontSize: 16),
               ),
               const Spacer(),
@@ -53,7 +53,7 @@ class InfoChkScreen extends StatelessWidget {
               WButton(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => CheckingList(),
+                      builder: (context) => const CheckingList(),
                     ));
                   },
                   title: 'Tasdiqlash',

@@ -63,7 +63,7 @@ class StorageRepository {
     return _preferences!.remove(key);
   }
 
-  static bool getBool(String key, {bool defValue = true}) {
+  static bool getBool(String key, {bool defValue = false}) {
     if (_preferences == null) return defValue;
     return _preferences!.getBool(key) ?? defValue;
   }

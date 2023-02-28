@@ -9,8 +9,8 @@ class ZikirlarView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ZikirlarView'),
       ),
-      body: Center(
-        child: const Text('ZikirlarView'),
+      body: const Center(
+        child: Text('ZikirlarView'),
       ),
     );
   }

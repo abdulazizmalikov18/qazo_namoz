@@ -9,8 +9,8 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('SettingsView'),
       ),
-      body: Center(
-        child: const Text('SettingsView'),
+      body: const Center(
+        child:  Text('SettingsView'),
       ),
     );
   }

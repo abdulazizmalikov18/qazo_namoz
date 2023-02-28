@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wave/config.dart';
-import 'package:wave/wave.dart';
 
 class WCalendar extends StatefulWidget {
   const WCalendar({

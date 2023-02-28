@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:qazo_namaz/features/common/controllers/controller.dart';
 import 'package:qazo_namaz/features/common/widgets/w_app_bar.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/ehtilam/widgets/w_progres_indicator.dart';
@@ -31,7 +29,7 @@ class _EhtilamScreenState extends State<EhtilamScreen> {
                 'Birinchi marta ehtilom/hayz paytingizni kiriting',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 24),
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +39,7 @@ class _EhtilamScreenState extends State<EhtilamScreen> {
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2!
+                    .bodyMedium!
                     .copyWith(fontSize: 16),
               ),
               const SizedBox(height: 12),

@@ -20,7 +20,7 @@ class CheckingList extends StatelessWidget {
             Text(
               'Hisoblanmoqda',
               style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 24),
+                  Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 24),
               textAlign: TextAlign.center,
             ),
           ],

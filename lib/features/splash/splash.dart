@@ -31,10 +31,10 @@ class MySplashView extends StatelessWidget {
                       ),
                     );
                   },
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     backgroundImage: AssetImage("assets/uzb.png"),
                   ),
-                  title: Text(
+                  title: const Text(
                     "O’zbek tili",
                     style: TextStyle(
                       fontSize: 18,
@@ -42,8 +42,8 @@ class MySplashView extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(),
-                ListTile(
+                const Divider(),
+                const ListTile(
                   leading: CircleAvatar(
                     backgroundImage: AssetImage("assets/uzb.png"),
                   ),
@@ -55,8 +55,8 @@ class MySplashView extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(),
-                ListTile(
+                const Divider(),
+                const ListTile(
                   leading: CircleAvatar(
                     backgroundImage: AssetImage("assets/rus.png"),
                   ),
@@ -68,7 +68,7 @@ class MySplashView extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider()
+                const Divider()
               ],
             ),
           ),

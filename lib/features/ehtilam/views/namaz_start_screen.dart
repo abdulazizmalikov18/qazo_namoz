@@ -30,7 +30,7 @@ class _NamazStartScreenState extends State<NamazStartScreen> {
                 'Namozni boshlagan vaqtingiz',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(fontSize: 24),
                 textAlign: TextAlign.center,
               ),
@@ -40,7 +40,7 @@ class _NamazStartScreenState extends State<NamazStartScreen> {
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2!
+                    .bodyMedium!
                     .copyWith(fontSize: 16),
               ),
               const SizedBox(height: 12),

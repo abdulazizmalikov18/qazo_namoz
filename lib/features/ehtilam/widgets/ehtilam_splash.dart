@@ -25,7 +25,7 @@ class AgeEndEhtilomSplash extends StatelessWidget {
               'Qazo namozlaringizni aniqlash uchun bizga ba’zi ma’lumotlaringiz kerak bo’ladi ',
               style: Theme.of(context)
                   .textTheme
-                  .bodyText1!
+                  .bodyLarge!
                   .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),

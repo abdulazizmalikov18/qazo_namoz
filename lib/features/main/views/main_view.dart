@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/main/widgets/calendar.dart';
 

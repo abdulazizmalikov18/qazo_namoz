@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_extensions
+
 extension extString on String {
   bool get isValidPassword {
     final passwordRegExp = RegExp(

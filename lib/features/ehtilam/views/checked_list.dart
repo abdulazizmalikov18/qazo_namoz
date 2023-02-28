@@ -25,7 +25,7 @@ class CheckedList extends StatelessWidget {
             Text(
               'Sizda umumiy hisobda 2 yil, 3 oy, 8 kun qazo namozlari bor ekan.',
               style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 24),
+                  Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 24),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),

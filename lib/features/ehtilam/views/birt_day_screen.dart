@@ -44,7 +44,7 @@ class _BirthDayScreenState extends State<BirthDayScreen> {
                     'Tug’ilgan kuningiz',
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText1!
+                        .bodyLarge!
                         .copyWith(fontSize: 24),
                   ),
                 ),

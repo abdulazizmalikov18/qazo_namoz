@@ -31,14 +31,14 @@ class InformationContainer extends StatelessWidget {
                 'Tug’ilgan kuningiz:',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
                 '${data.day} - ${MyFunctions().getmonth(data.month)},${data.year}',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16),
               )
             ],
@@ -57,14 +57,14 @@ class InformationContainer extends StatelessWidget {
                 'Ehtilom/hayz vaqti:',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
                 '${hayz.day} - ${MyFunctions().getmonth(hayz.month)},${hayz.year}',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16),
               )
             ],
@@ -79,14 +79,14 @@ class InformationContainer extends StatelessWidget {
                 'Namozni boshladingiz:',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
                 '${namoz.day} - ${MyFunctions().getmonth(namoz.month)},${namoz.year}',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .titleLarge!
                     .copyWith(fontSize: 16),
               )
             ],

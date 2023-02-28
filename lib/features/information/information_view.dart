@@ -9,8 +9,8 @@ class InformationView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('IUnformatin'),
       ),
-      body: Center(
-        child: const Text('IUnformatin'),
+      body: const Center(
+        child: Text('IUnformatin'),
       ),
     );
   }
