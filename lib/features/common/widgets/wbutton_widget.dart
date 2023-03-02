@@ -6,30 +6,33 @@ class WButton extends StatelessWidget {
   final String title;
   final Icon? icons;
   final bool? isActiv;
+  final double? width;
   const WButton(
       {super.key,
       required this.onTap,
       required this.title,
       this.isActiv = true,
-      this.icons});
+      this.icons,
+      this.width});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: width ?? double.infinity,
       height: 56,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: isActiv == true ? AppColors.gren : AppColors.grey,
         ),
         onPressed: onTap,
-        child: icons ?? Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w400,
-                ),
+        child: icons ??
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
               ),
+            ),
       ),
     );
   }

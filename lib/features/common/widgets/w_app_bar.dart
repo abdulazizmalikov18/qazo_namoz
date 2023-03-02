@@ -5,8 +5,10 @@ class WAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WAppBar({
     super.key,
     required this.title,
+    this.isRedy,
   });
   final String title;
+  final VoidCallback? isRedy;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,23 @@ class WAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       leadingWidth: 80,
+      actions: [
+        if (isRedy != null)
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(
+              onPressed: isRedy,
+              child: const Text(
+                "Tayyor",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 

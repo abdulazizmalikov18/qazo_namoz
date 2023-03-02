@@ -1,3 +1,3 @@
 class AppImages {
-  static const defaultImage = '';
+  static const settings = 'assets/images/setting.png';
 }

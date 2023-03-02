@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qazo_namaz/core/utils/my_function.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/main/widgets/calendar.dart';
 
@@ -24,7 +25,7 @@ class _HomeViewState extends State<HomeView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('${selectedDate.month}'),
+                Text(MyFunctions.getmonth(selectedDate.month)),
                 const Icon(Icons.arrow_forward_ios_rounded)
               ],
             ),
@@ -49,13 +50,35 @@ class _HomeViewState extends State<HomeView> {
               width: MediaQuery.of(context).size.width - 32,
               onTap: () {},
             ),
-            WButton(
-              onTap: () {
-                selectedDate =
-                    DateTime(selectedDate.year, selectedDate.month + 1);
-                setState(() {});
-              },
-              title: "Oldingi oy",
+            const SizedBox(height: 24),
+            SizedBox(
+              height: 60,
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: WButton(
+                      onTap: () {
+                        selectedDate =
+                            DateTime(selectedDate.year, selectedDate.month - 1);
+                        setState(() {});
+                      },
+                      title: "Oldingi oy",
+                    ),
+                  ),
+                  const SizedBox(width: 36),
+                  Expanded(
+                    child: WButton(
+                      onTap: () {
+                        selectedDate =
+                            DateTime(selectedDate.year, selectedDate.month + 1);
+                        setState(() {});
+                      },
+                      title: "Keyingi oy",
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),

@@ -1,21 +1,19 @@
 class MyFunctions {
-  List<String> mont = [
+  static List<String> mont = [
     'Yanvar',
     'Fevral',
-    'dfd',
-    'dfa',
-    'fdf',
-    'dfd',
-    'dfa',
-    'fdf',
-    'dfd',
-    'dfa',
-    'fdf',
-    'dfd',
-    'dfa',
-    'fdf'
+    'Mart',
+    'Aprel',
+    'May',
+    'Iyun',
+    'Iyul',
+    'Avgust',
+    'Sentyabr',
+    'Oktyabr',
+    'Noyabr',
+    'Dekabr',
   ];
-  getmonth(int month) {
+  static String getmonth(int month) {
     return mont[month - 1];
   }
 

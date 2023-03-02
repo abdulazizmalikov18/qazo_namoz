@@ -35,7 +35,7 @@ class InformationContainer extends StatelessWidget {
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
-                '${data.day} - ${MyFunctions().getmonth(data.month)},${data.year}',
+                '${data.day} - ${MyFunctions.getmonth(data.month)},${data.year}',
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -61,7 +61,7 @@ class InformationContainer extends StatelessWidget {
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
-                '${hayz.day} - ${MyFunctions().getmonth(hayz.month)},${hayz.year}',
+                '${hayz.day} - ${MyFunctions.getmonth(hayz.month)},${hayz.year}',
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -83,7 +83,7 @@ class InformationContainer extends StatelessWidget {
                     .copyWith(fontSize: 16, color: AppColors.textColor),
               ),
               Text(
-                '${namoz.day} - ${MyFunctions().getmonth(namoz.month)},${namoz.year}',
+                '${namoz.day} - ${MyFunctions.getmonth(namoz.month)},${namoz.year}',
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
