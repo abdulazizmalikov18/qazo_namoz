@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
-import 'package:qazo_namaz/features/auth/controllers/auth_controller.dart';
 import 'package:qazo_namaz/features/common/widgets/wbutton_widget.dart';
 import 'package:qazo_namaz/features/main/main_screen.dart';
 
@@ -36,7 +34,7 @@ class CheckedList extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 40.0),
               child: WButton(
                 onTap: () {
-                  context.read<AuthState>().setLoggedInStatus(true);
+                  // context.read<AuthState>().setLoggedInStatus(true);
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (context) => const MainScreen()),
                     (Route<dynamic> route) => false,

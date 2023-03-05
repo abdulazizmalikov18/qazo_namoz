@@ -58,9 +58,7 @@ class _SignInViewState extends State<SignInView> {
                     return null;
                   },
                   onChanged: (val) {
-                    ischek = MyFunctions().ischekt(
-                        password: passwordController.text,
-                        phone: phoneController.text);
+                    ischek = MyFunctions().ischekt(phone: phoneController.text);
                     setState(() {});
                   },
                   keyboardType: TextInputType.phone,
@@ -88,9 +86,7 @@ class _SignInViewState extends State<SignInView> {
                     return null;
                   },
                   onChanged: (value) {
-                    ischek = MyFunctions().ischekt(
-                        password: passwordController.text,
-                        phone: phoneController.text);
+                    ischek = MyFunctions().ischekt(phone: phoneController.text);
                     setState(() {});
                   },
                   obscureText: ischek,
@@ -111,7 +107,7 @@ class _SignInViewState extends State<SignInView> {
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const OTPview(),
+                        builder: (context) => OTPview(verificationId: ''),
                       ));
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(

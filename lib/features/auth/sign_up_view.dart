@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
+import 'package:provider/provider.dart';
 import 'package:qazo_namaz/core/utils/colors.dart';
 import 'package:qazo_namaz/core/utils/my_function.dart';
-import 'package:qazo_namaz/features/auth/views/otp_view.dart';
+import 'package:qazo_namaz/features/auth/controllers/auth_controller.dart';
+
 import 'package:qazo_namaz/features/auth/views/sign_in_view.dart';
 import 'package:qazo_namaz/features/auth/widgets/social_container.dart';
 import 'package:qazo_namaz/features/auth/widgets/w_divider.dart';
@@ -19,7 +21,6 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> {
   final phoneController = TextEditingController();
-  final passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool ischek = false;
 
@@ -58,9 +59,7 @@ class _SignUpViewState extends State<SignUpView> {
                     return null;
                   },
                   onChanged: (val) {
-                    ischek = MyFunctions().ischekt(
-                        password: passwordController.text,
-                        phone: phoneController.text);
+                    ischek = MyFunctions().ischekt(phone: phoneController.text);
                     setState(() {});
                   },
                   keyboardType: TextInputType.phone,
@@ -78,41 +77,40 @@ class _SignUpViewState extends State<SignUpView> {
                     color: AppColors.textgrey,
                   ),
                 ),
-                TextFormField(
-                  controller: passwordController,
-                  maxLength: 20,
-                  validator: (value) {
-                    if (!(value!.length >= 8)) {
-                      return 'iltimos yozing';
-                    }
-                    return null;
-                  },
-                  onChanged: (value) {
-                    ischek = MyFunctions().ischekt(
-                        password: passwordController.text,
-                        phone: phoneController.text);
-                    setState(() {});
-                  },
-                  obscureText: ischek,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    hintText: "Yangi parol yozing",
-                    prefixIcon: const Icon(CupertinoIcons.lock),
-                    suffix: IconButton(
-                      onPressed: () {},
-                      icon: ischek
-                          ? const Icon(Icons.remove_red_eye_outlined)
-                          : const Icon(Icons.remove),
-                    ),
-                  ),
-                ),
+                // TextFormField(
+                //   controller: passwordController,
+                //   maxLength: 20,
+                //   validator: (value) {
+                //     if (!(value!.length >= 8)) {
+                //       return 'iltimos yozing';
+                //     }
+                //     return null;
+                //   },
+                //   onChanged: (value) {
+                //     ischek = MyFunctions().ischekt(
+                //         password: passwordController.text,
+                //         phone: phoneController.text);
+                //     setState(() {});
+                //   },
+                //   obscureText: ischek,
+                //   keyboardType: TextInputType.emailAddress,
+                //   decoration: InputDecoration(
+                //     hintText: "Yangi parol yozing",
+                //     prefixIcon: const Icon(CupertinoIcons.lock),
+                //     suffix: IconButton(
+                //       onPressed: () {},
+                //       icon: ischek
+                //           ? const Icon(Icons.remove_red_eye_outlined)
+                //           : const Icon(Icons.remove),
+                //     ),
+                //   ),
+                // ),
+
                 SizedBox(height: size.height * 0.06),
                 WButton(
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const OTPview(),
-                      ));
+                      sendPhoneNumber();
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("To'ri yozing")),
@@ -162,5 +160,13 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       ),
     );
+  }
+
+  void sendPhoneNumber() {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    String phoneNumber = phoneController.text.trim();
+
+    print('===> ==> My Number $phoneNumber');
+    ap.signInWithPhone(context, phoneNumber);
   }
 }
