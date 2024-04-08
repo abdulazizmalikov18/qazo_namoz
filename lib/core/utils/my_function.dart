@@ -1,27 +1,13 @@
+import 'package:intl/intl.dart';
+
 class MyFunctions {
-  static List<String> mont = [
-    'Yanvar',
-    'Fevral',
-    'Mart',
-    'Aprel',
-    'May',
-    'Iyun',
-    'Iyul',
-    'Avgust',
-    'Sentyabr',
-    'Oktyabr',
-    'Noyabr',
-    'Dekabr',
-  ];
-  static String getmonth(int month) {
-    return mont[month - 1];
+  static String dateTimeFormatMonth(DateTime dateTime) {
+    String formattedDateTime = DateFormat('dd-MMMM, yyyy').format(dateTime);
+    return formattedDateTime;
   }
 
-  bool ischekt({required String phone}) {
-    if (phone.length >= 12) {
-      return true;
-    } else {
-      return false;
-    }
+  static String dateTimeOnlyMonth(DateTime dateTime) {
+    String formattedDateTime = DateFormat('MMMM').format(dateTime);
+    return formattedDateTime;
   }
 }
