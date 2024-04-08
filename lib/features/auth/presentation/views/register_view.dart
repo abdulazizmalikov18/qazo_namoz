@@ -72,9 +72,11 @@ class _RegisterViewsState extends State<RegisterViews> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: SizeConfig.h(40)),
               child: WButton(
-                onTap: () {},
+                onTap: () {
+                  context.go(AppRoutPath.registerTitle);
+                },
                 text: "Yuborish",
-                isDisabled: true,
+                isDisabled: false,
               ),
             ),
             Row(

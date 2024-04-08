@@ -71,9 +71,11 @@ class _LoginViewsState extends State<LoginViews> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: SizeConfig.h(40)),
               child: WButton(
-                onTap: () {},
+                onTap: () {
+                  context.go(AppRoutPath.home);
+                },
                 text: "Yuborish",
-                isDisabled: true,
+                isDisabled: false,
               ),
             ),
             Row(
