@@ -53,8 +53,7 @@ class WButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         child: isLoading
             ? Center(child: CupertinoActivityIndicator(color: textColor))
-            : AnimatedDefaultTextStyle(
-                duration: const Duration(milliseconds: 200),
+            : DefaultTextStyle(
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       height: 1.36,
                       color: textColor,
