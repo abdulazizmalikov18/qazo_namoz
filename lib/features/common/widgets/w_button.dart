@@ -40,7 +40,7 @@ class WButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? double.infinity,
+      width: width,
       height: height ?? 56,
       child: CupertinoButton(
         color: isDisabled ? disabledColor : color ?? AppColors.green,
@@ -50,25 +50,36 @@ class WButton extends StatelessWidget {
           }
         },
         pressedOpacity: isDisabled ? 1 : 0.5,
+        padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(borderRadius),
-        child: isLoading
-            ? Center(child: CupertinoActivityIndicator(color: textColor))
-            : DefaultTextStyle(
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      height: 1.36,
-                      color: textColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                child: child ??
-                    Text(
-                      text,
-                      style: textStyle,
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-              ),
+        child: Container(
+          width: width,
+          height: height ?? 56,
+          padding: padding,
+          decoration: BoxDecoration(
+            border: border,
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          alignment: Alignment.center,
+          child: isLoading
+              ? Center(child: CupertinoActivityIndicator(color: textColor))
+              : DefaultTextStyle(
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        height: 1.36,
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                  child: child ??
+                      Text(
+                        text,
+                        style: textStyle,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                ),
+        ),
       ),
     );
   }

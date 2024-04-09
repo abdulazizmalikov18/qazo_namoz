@@ -7,6 +7,7 @@ import 'package:qazo_namoz/features/auth/presentation/views/register_title_view.
 import 'package:qazo_namoz/features/auth/presentation/views/register_view.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 import 'package:qazo_namoz/features/common/views/error_screen.dart';
+import 'package:qazo_namoz/features/home/presentation/views/calendar_view.dart';
 import 'package:qazo_namoz/features/home/presentation/views/home_view.dart';
 import 'package:qazo_namoz/features/home/presentation/views/main_view.dart';
 import 'package:qazo_namoz/features/information/presentation/views/information_selection_view.dart';
@@ -26,7 +27,7 @@ sealed class AppRouts {
 
   static GoRouter router = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: AppRoutPath.splash,
+    initialLocation: AppRoutPath.home,
     errorBuilder: (context, state) => const ErrorScreen(),
     routes: [
       GoRoute(
@@ -76,6 +77,13 @@ sealed class AppRouts {
               GoRoute(
                 path: AppRoutPath.home,
                 builder: (context, state) => const HomeView(),
+              ),
+              GoRoute(
+                path: AppRoutPath.calendar,
+                builder: (context, state) => CalendarView(
+                  dateTime:
+                      state.extra != null ? (state.extra as Map)["day"] : 0,
+                ),
               ),
             ],
           ),

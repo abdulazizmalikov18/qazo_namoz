@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
+import 'package:qazo_namoz/core/utils/my_function.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 import 'package:qazo_namoz/features/onboardeing/domain/entity/onboarding_entity.dart';
@@ -99,7 +100,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           16,
           16,
           16,
-          MediaQuery.of(context).viewPadding.bottom,
+          MyFunctions.paddingBottom(context),
         ),
         child: WButton(
           onTap: () {},

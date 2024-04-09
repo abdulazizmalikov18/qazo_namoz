@@ -39,3 +39,15 @@ String getMonthName(int month, {List<String>? monthNames}) {
       ];
   return names[month - 1];
 }
+
+List<String> getWeekName() {
+  return [
+    'Du',
+    'Se',
+    'Ch',
+    'Pa',
+    'Ju',
+    'Sh',
+    'Ya',
+  ];
+}

@@ -101,10 +101,11 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
               16,
               16,
               16,
-              MediaQuery.of(context).viewPadding.bottom,
+              MyFunctions.paddingBottom(context),
             ),
             child: WButton(
               onTap: () {
+                print("====>>> ${vm.ehtilam.year}");
                 if (index.value != list.length - 1) {
                   controller.animateToPage(
                     index.value + 1,
@@ -159,8 +160,7 @@ class RegisterBrithDay extends StatelessWidget {
             mode: CupertinoDatePickerMode.date,
             onDateTimeChanged: (val) {
               vm.brithDay = val;
-              vm.ehtilam = DateTime(val.year + 7);
-              vm.startPrayer = DateTime(val.year + 7);
+              vm.ehtilam = vm.brithDay.add(const Duration(days: 2600));
             },
           ),
         ),
@@ -253,8 +253,8 @@ class RegisterStartPrayer extends StatelessWidget {
           height: 220,
           child: CupertinoDatePicker(
             minimumYear: vm.ehtilam.year,
-            maximumDate: DateTime.now(),
-            initialDateTime: vm.startPrayer,
+            maximumYear: DateTime.now().year,
+            initialDateTime: DateTime.now(),
             mode: CupertinoDatePickerMode.date,
             onDateTimeChanged: (val) {
               vm.startPrayer = val;

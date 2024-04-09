@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:qazo_namoz/assets/colors/colosrs.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/dates.dart';
-import 'package:qazo_namoz/features/home/presentation/widgets/calendar/day_number.dart';
-import 'package:qazo_namoz/features/home/presentation/widgets/calendar/month_title.dart';
+import 'package:qazo_namoz/features/home/presentation/widgets/calendar/day_number_anim.dart';
 
-class MonthView extends StatelessWidget {
-  const MonthView({
+class MonthViewAnim extends StatelessWidget {
+  const MonthViewAnim({
     super.key,
     required this.context,
     required this.year,
     required this.month,
-    required this.padding,
+    this.padding = 16,
+    this.margin = 2,
     required this.currentDateColor,
     this.highlightedDates,
     this.highlightedDateColor,
     this.monthNames,
-    this.onTap,
     this.titleStyle,
+    required this.onTapDay,
   });
 
   final BuildContext context;
@@ -26,8 +27,9 @@ class MonthView extends StatelessWidget {
   final List<DateTime>? highlightedDates;
   final Color? highlightedDateColor;
   final List<String>? monthNames;
-  final Function? onTap;
   final TextStyle? titleStyle;
+  final double margin;
+  final Function(DateTime day) onTapDay;
 
   Color? getDayNumberColor(DateTime date) {
     Color? color;
@@ -35,32 +37,38 @@ class MonthView extends StatelessWidget {
       color = currentDateColor;
     } else if (highlightedDates != null &&
         isHighlightedDate(date, highlightedDates ?? [])) {
-      color = highlightedDateColor ?? Colors.amber;
+      color = highlightedDateColor ?? Colors.white;
     }
     return color;
   }
 
   Widget buildMonthDays(BuildContext context) {
+    final size = (MediaQuery.sizeOf(context).width - 32 - (margin * 14)) / 7;
     final List<Row> dayRows = <Row>[];
-    final List<DayNumber> dayRowChildren = <DayNumber>[];
+    final List<DayNumberAnim> dayRowChildren = <DayNumberAnim>[];
 
     final int daysInMonth = getDaysInMonth(year, month);
     final int firstWeekdayOfMonth = DateTime(year, month, 1).weekday;
 
     for (int day = 2 - firstWeekdayOfMonth; day <= daysInMonth; day++) {
       Color? color;
+      print("=====>>>> GetDay $day");
       if (day > 0) {
         color = getDayNumberColor(DateTime(year, month, day));
       }
 
-      dayRowChildren.add(DayNumber(
+      dayRowChildren.add(DayNumberAnim(
         day: day,
         color: color,
+        size: size,
+        margin: margin,
+        dateTime: DateTime(year, month, day),
+        onTap: onTapDay,
       ));
 
       if ((day - 1 + firstWeekdayOfMonth) % DateTime.daysPerWeek == 0 ||
           day == daysInMonth) {
-        dayRows.add(Row(children: List<DayNumber>.from(dayRowChildren)));
+        dayRows.add(Row(children: List<DayNumberAnim>.from(dayRowChildren)));
         dayRowChildren.clear();
       }
     }
@@ -71,37 +79,36 @@ class MonthView extends StatelessWidget {
     );
   }
 
-  Widget buildMonthView(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          MonthTitle(
-            month: month,
-            monthNames: monthNames,
-            style: titleStyle,
+          Row(
+            children: getWeekName().map<Widget>((e) {
+              final size =
+                  (MediaQuery.sizeOf(context).width - 32 - (margin * 14)) / 7;
+              return Container(
+                height: size,
+                width: size,
+                margin: EdgeInsets.symmetric(horizontal: margin),
+                alignment: Alignment.center,
+                child: Text(
+                  e,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.greyText,
+                  ),
+                ),
+              );
+            }).toList(),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: buildMonthDays(context),
-          ),
+          buildMonthDays(context),
         ],
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return onTap == null
-        ? buildMonthView(context)
-        : GestureDetector(
-            onTap: () {
-              if (onTap != null) {
-                onTap!(year, month);
-              }
-            },
-            child: buildMonthView(context),
-          );
   }
 }

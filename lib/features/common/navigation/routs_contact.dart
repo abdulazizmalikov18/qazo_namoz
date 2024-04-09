@@ -4,6 +4,7 @@ class AppRoutPath {
   static const generalSettings = '/general_settings';
   static const lenguage = '/lenguage';
   static const home = '/home';
+  static const calendar = '/calendar';
   static const information = '/information';
   static const informationSelection = '/information_selection';
   static const mentions = '/mentions';

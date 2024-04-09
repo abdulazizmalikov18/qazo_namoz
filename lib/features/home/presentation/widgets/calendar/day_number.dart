@@ -19,19 +19,17 @@ class DayNumber extends StatelessWidget {
       height: size,
       alignment: Alignment.center,
       margin: const EdgeInsets.all(1),
-      decoration: color != null
-          ? BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(2),
-            )
-          : null,
+      decoration: BoxDecoration(
+        color: day < 1 ? null : color ?? Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(2),
+      ),
       child: Text(
         day < 1 ? '' : day.toString(),
         textAlign: TextAlign.center,
         style: TextStyle(
           color: color != null ? Colors.white : Colors.black87,
-          fontSize: screenSize(context) == ScreenSizes.small ? 8.0 : 10.0,
-          fontWeight: FontWeight.normal,
+          fontSize: screenSize(context) == ScreenSizes.small ? 10 : 12.0,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );

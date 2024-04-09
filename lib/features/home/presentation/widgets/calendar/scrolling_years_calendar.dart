@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qazo_namoz/features/home/presentation/widgets/calendar/screen_sizes.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/year_view.dart';
 
 class ScrollingYearsCalendar extends StatefulWidget {
@@ -43,48 +42,39 @@ class ScrollingYearsCalendar extends StatefulWidget {
 }
 
 class _ScrollingYearsCalendarState extends State<ScrollingYearsCalendar> {
+  ValueNotifier<int> year = ValueNotifier<int>(0);
+  @override
+  void initState() {
+    year.value = widget.initialDate.year;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final int itemCount = widget.lastDate.year - widget.firstDate.year + 1;
-
-    // Makes sure the right initial offset is calculated so the listview
-    // jumps to the initial year.
-    final double initialOffset =
-        (widget.initialDate.year - widget.firstDate.year) *
-            getYearViewHeight(context);
-    final ScrollController scrollController =
-        ScrollController(initialScrollOffset: initialOffset);
-
-    print("=====>>>>>> NImaga");
-    List<Widget> children = [];
-    for (int index = 0; index < itemCount; index++) {
-      final int year = index + widget.firstDate.year;
-      children.add(YearView(
-        context: context,
-        year: year,
-        currentDateColor: widget.currentDateColor,
-        highlightedDates: widget.highlightedDates,
-        highlightedDateColor: widget.highlightedDateColor,
-        monthNames: widget.monthNames,
-        onMonthTap: widget.onMonthTap,
-        monthTitleStyle: widget.monthTitleStyle,
-      ));
-    }
-
-    return ListView(
-      controller: scrollController,
-      children: children,
+    return ValueListenableBuilder(
+      valueListenable: year,
+      builder: (context, count, _) {
+        return YearView(
+          context: context,
+          year: year.value,
+          currentDateColor: widget.currentDateColor,
+          highlightedDates: widget.highlightedDates,
+          highlightedDateColor: widget.highlightedDateColor,
+          monthNames: widget.monthNames,
+          onMonthTap: widget.onMonthTap,
+          monthTitleStyle: widget.monthTitleStyle,
+          onTapBack: () {
+            if (year.value > widget.firstDate.year) {
+              year.value -= 1;
+            }
+          },
+          onTapForward: () {
+            if (year.value < widget.lastDate.year) {
+              year.value += 1;
+            }
+          },
+        );
+      },
     );
-
-    // return ListView.builder(
-    //   padding: const EdgeInsets.only(bottom: 16.0),
-    //   // controller: scrollController,
-    //   reverse: true,
-    //   itemCount: itemCount,
-    //   itemBuilder: (BuildContext context, int index) {
-    //     final int year = index + widget.firstDate.year;
-    //     return _getYearView(year);
-    //   },
-    // );
   }
 }

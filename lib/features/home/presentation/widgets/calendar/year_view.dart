@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/month_view.dart';
-import 'package:qazo_namoz/features/home/presentation/widgets/calendar/screen_sizes.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/year_title.dart';
 
 class YearView extends StatelessWidget {
@@ -14,6 +13,8 @@ class YearView extends StatelessWidget {
     this.monthNames,
     this.onMonthTap,
     this.monthTitleStyle,
+    required this.onTapBack,
+    required this.onTapForward,
   });
 
   final BuildContext context;
@@ -24,6 +25,9 @@ class YearView extends StatelessWidget {
   final List<String>? monthNames;
   final Function? onMonthTap;
   final TextStyle? monthTitleStyle;
+
+  final GestureTapCallback onTapBack;
+  final GestureTapCallback onTapForward;
 
   double get horizontalMargin => 16.0;
   double get monthViewPadding => 0;
@@ -63,36 +67,39 @@ class YearView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: getYearViewHeight(context),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.symmetric(
-              horizontal: horizontalMargin,
-              vertical: 0.0,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                onTapBack();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                size: 18,
+              ),
             ),
-            child: YearTitle(year),
-          ),
-          Container(
-            margin: EdgeInsets.only(
-              left: horizontalMargin,
-              right: horizontalMargin,
-              top: 8.0,
-              bottom: 16,
+            YearTitle(year),
+            IconButton(
+              onPressed: () {
+                onTapForward();
+              },
+              icon: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 18,
+              ),
             ),
-            child: const Divider(color: Colors.black26),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(
-              horizontal: horizontalMargin - monthViewPadding,
-              vertical: 0.0,
-            ),
-            child: buildYearMonths(context),
-          ),
-        ],
-      ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: buildYearMonths(context),
+        ),
+      ],
     );
   }
 }
