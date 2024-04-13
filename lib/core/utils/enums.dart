@@ -32,3 +32,12 @@ enum ModerationStatusEnum {
 
   final String value;
 }
+
+enum PrayerTime {
+  None,
+  Fajr,
+  Dhuhr,
+  Asr,
+  Maghrib,
+  Isha,
+}

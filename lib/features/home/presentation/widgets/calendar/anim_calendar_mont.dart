@@ -40,7 +40,7 @@ class _AnimCalendarMonthState extends State<AnimCalendarMonth> {
       onTapDay: (DateTime day) {
         showModalBottomSheet(
           context: context,
-          constraints: BoxConstraints(maxHeight: SizeConfig.h(380)),
+          constraints: BoxConstraints(maxHeight: SizeConfig.h(400)),
           builder: (context) => Column(
             children: [
               Container(
