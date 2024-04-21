@@ -24,6 +24,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
   @override
   void initState() {
     list = [
+      RegisterGender(vm: vm),
       RegisterBrithDay(vm: vm),
       RegisterEhtilam(vm: vm),
       RegisterStartPrayer(vm: vm),
@@ -67,11 +68,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                   child: SizedBox(
                     height: 12,
                     child: LinearProgressIndicator(
-                      value: index.value == 0
-                          ? 0.33
-                          : index.value == 1
-                              ? 0.66
-                              : 1,
+                      value: 1 / list.length * (index.value + 1),
                       borderRadius: BorderRadius.circular(8),
                       color: AppColors.green,
                     ),
@@ -105,7 +102,6 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
             ),
             child: WButton(
               onTap: () {
-                print("====>>> ${vm.ehtilam.year}");
                 if (index.value != list.length - 1) {
                   controller.animateToPage(
                     index.value + 1,
@@ -125,6 +121,93 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
           ),
         );
       },
+    );
+  }
+}
+
+class RegisterGender extends StatefulWidget {
+  const RegisterGender({super.key, required this.vm});
+  final RegisterController vm;
+
+  @override
+  State<RegisterGender> createState() => _RegisterGenderState();
+}
+
+class _RegisterGenderState extends State<RegisterGender> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CupertinoButton(
+          onPressed: () {
+            widget.vm.gender = true;
+            setState(() {});
+          },
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              border:
+                  widget.vm.gender ? Border.all(color: AppColors.green) : null,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 20,
+                  spreadRadius: 0,
+                  offset: const Offset(0, 0),
+                  color: const Color(0xFF0C1230).withOpacity(.07),
+                )
+              ],
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 24),
+            child: Column(
+              children: [
+                AppIcons.manMuslim.svg(),
+                const SizedBox(height: 8),
+                const Text(
+                  "Erkak kishi",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+        ),
+        CupertinoButton(
+          onPressed: () {
+            widget.vm.gender = false;
+            setState(() {});
+          },
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border:
+                  widget.vm.gender ? null : Border.all(color: AppColors.green),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 20,
+                  spreadRadius: 0,
+                  offset: const Offset(0, 0),
+                  color: const Color(0xFF0C1230).withOpacity(.07),
+                )
+              ],
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 24),
+            child: Column(
+              children: [
+                AppIcons.muslimParanja.svg(),
+                const SizedBox(height: 8),
+                const Text(
+                  "Ayol kishi",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

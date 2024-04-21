@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
@@ -17,6 +16,7 @@ class MentionsView extends StatelessWidget {
           onTap: () {
             context.push(AppRoutPath.mentionSelection);
           },
+          borderRadius: BorderRadius.circular(8),
           child: Container(
             padding: EdgeInsets.symmetric(vertical: SizeConfig.h(8)),
             child: Column(

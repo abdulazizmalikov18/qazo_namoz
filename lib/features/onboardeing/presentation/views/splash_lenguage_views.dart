@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
+import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 
 class SplashLenguageView extends StatelessWidget {
   const SplashLenguageView({super.key});
@@ -27,11 +29,23 @@ class SplashLenguageView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ListTile(
+                    onTap: () {
+                      context.go(AppRoutPath.onboarding);
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     leading: Image.asset(AppImages.uz, height: 36),
                     title: const Text("O’zbek tili"),
                   ),
                   const Divider(),
                   ListTile(
+                    onTap: () {
+                      context.go(AppRoutPath.onboarding);
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     leading: Image.asset(
                       AppImages.uz,
                       height: 36,
@@ -40,6 +54,12 @@ class SplashLenguageView extends StatelessWidget {
                   ),
                   const Divider(),
                   ListTile(
+                    onTap: () {
+                      context.go(AppRoutPath.onboarding);
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                     leading: Container(
                       height: 36,
                       width: 36,

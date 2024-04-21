@@ -15,6 +15,8 @@ class AppIcons {
   static const infoCircle = "assets/icons/info_circle.svg";
   static const home = "assets/icons/home.svg";
   static const focusTarget = "assets/icons/focus_target.svg";
+  static const manMuslim = "assets/icons/man_muslim.svg";
+  static const muslimParanja = "assets/icons/muslim_paranja.svg";
 }
 
 extension SvgExt on String {

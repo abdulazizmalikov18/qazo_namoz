@@ -17,6 +17,7 @@ class InformationView extends StatelessWidget {
           onTap: () {
             context.push(AppRoutPath.informationSelection);
           },
+          borderRadius: BorderRadius.circular(8),
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: const Text(

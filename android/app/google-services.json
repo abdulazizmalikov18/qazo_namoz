@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "492228861999",
+    "project_id": "qazo-namoz",
+    "storage_bucket": "qazo-namoz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492228861999:android:fa42327897ebcee5b026da",
+        "android_client_info": {
+          "package_name": "com.example.qazo_namaz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492228861999-2e9fdsmu78q80k22tuk35e4vloem6l34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdLZGO0dC5aa40S6gZQKuf_RC-OapkYRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492228861999-2e9fdsmu78q80k22tuk35e4vloem6l34.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "492228861999-504oem8pgpp79ncidpm0ndt9f4497pu2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qazoNamaz"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492228861999:android:5108ae94f0ecba71b026da",
+        "android_client_info": {
+          "package_name": "com.mazmun.qazonamoz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492228861999-2e9fdsmu78q80k22tuk35e4vloem6l34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdLZGO0dC5aa40S6gZQKuf_RC-OapkYRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492228861999-2e9fdsmu78q80k22tuk35e4vloem6l34.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "492228861999-504oem8pgpp79ncidpm0ndt9f4497pu2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qazoNamaz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

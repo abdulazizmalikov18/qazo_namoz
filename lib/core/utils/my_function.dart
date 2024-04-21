@@ -9,7 +9,7 @@ class MyFunctions {
     return formattedDateTime;
   }
 
- static String formatDate(DateTime dateTime) {
+  static String formatDate(DateTime dateTime) {
     DateFormat dateFormat = DateFormat('dd.MM.yyyy');
     return dateFormat.format(dateTime);
   }
@@ -62,7 +62,7 @@ class MyFunctions {
   }
 
   static double paddingBottom(BuildContext context) {
-    return Platform.isIOS ? MyFunctions.paddingBottom(context) : 16;
+    return Platform.isIOS ? MediaQuery.of(context).viewPadding.bottom : 16;
   }
 
   static List<String> monthNames() {

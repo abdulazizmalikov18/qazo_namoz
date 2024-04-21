@@ -52,7 +52,6 @@ class MonthViewAnim extends StatelessWidget {
 
     for (int day = 2 - firstWeekdayOfMonth; day <= daysInMonth; day++) {
       Color? color;
-      print("=====>>>> GetDay $day");
       if (day > 0) {
         color = getDayNumberColor(DateTime(year, month, day));
       }
