@@ -45,4 +45,4 @@ flutter:
     - assets/anim/
     - assets/icons/
     - assets/images/
-    - assets/sound/
+    # - assets/sound/
