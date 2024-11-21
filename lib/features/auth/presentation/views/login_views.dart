@@ -20,163 +20,154 @@ class _LoginViewsState extends State<LoginViews> {
   bool isObscure = false;
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion(
-      value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      ),
-      child: Scaffold(
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: MediaQuery.of(context).viewPadding.top),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Akkauntga kirish",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                  ),
-                  Image.asset(
-                    AppImages.icon,
-                    height: 36,
-                    width: 36,
-                  )
-                ],
-              ),
-              SizedBox(height: SizeConfig.h(120)),
-              const Text("Telefon raqam"),
-              TextFormField(
-                inputFormatters: [Formatters.phoneFormatter],
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(CupertinoIcons.phone),
-                  hintText: "Raqamingizni yozing",
+    return Scaffold(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: MediaQuery.of(context).viewPadding.top),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Akkauntga kirish",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
+                Image.asset(
+                  AppImages.icon,
+                  height: 36,
+                  width: 36,
+                )
+              ],
+            ),
+            SizedBox(height: SizeConfig.h(120)),
+            const Text("Telefon raqam"),
+            TextFormField(
+              inputFormatters: [Formatters.phoneFormatter],
+              decoration: const InputDecoration(
+                prefixIcon: Icon(CupertinoIcons.phone),
+                hintText: "Raqamingizni yozing",
               ),
-              SizedBox(height: SizeConfig.h(16)),
-              const Text("Parol yarating"),
-              TextFormField(
-                obscureText: isObscure,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(CupertinoIcons.lock),
-                  suffixIcon: InkWell(
-                    onTap: () {
-                      isObscure = !isObscure;
-                      setState(() {});
-                    },
-                    child: isObscure
-                        ? const Icon(CupertinoIcons.eye)
-                        : const Icon(CupertinoIcons.eye_slash),
-                  ),
-                  hintText: "Yangi parol yozing",
-                ),
-              ),
-              SizedBox(height: SizeConfig.h(16)),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.h(40)),
-                child: WButton(
+            ),
+            SizedBox(height: SizeConfig.h(16)),
+            const Text("Parol yarating"),
+            TextFormField(
+              obscureText: isObscure,
+              decoration: InputDecoration(
+                prefixIcon: const Icon(CupertinoIcons.lock),
+                suffixIcon: InkWell(
                   onTap: () {
-                    context.go(AppRoutPath.home);
+                    isObscure = !isObscure;
+                    setState(() {});
                   },
-                  text: "Yuborish",
-                  isDisabled: false,
+                  child: isObscure
+                      ? const Icon(CupertinoIcons.eye)
+                      : const Icon(CupertinoIcons.eye_slash),
                 ),
+                hintText: "Yangi parol yozing",
               ),
-              Row(
-                children: [
-                  const Expanded(child: Divider()),
-                  SizedBox(width: SizeConfig.v(16)),
-                  const Text("yoki"),
-                  SizedBox(width: SizeConfig.v(16)),
-                  const Expanded(child: Divider()),
-                ],
+            ),
+            SizedBox(height: SizeConfig.h(16)),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: SizeConfig.h(40)),
+              child: WButton(
+                onTap: () {
+                  context.go(AppRoutPath.home);
+                },
+                text: "Yuborish",
+                isDisabled: false,
               ),
-              SizedBox(height: SizeConfig.h(40)),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: SizeConfig.h(62),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 20,
-                            spreadRadius: 0,
-                            offset: const Offset(0, 0),
-                            color: const Color(0xFF0C1230).withOpacity(.07),
-                          )
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AppIcons.google.svg(),
-                          SizedBox(width: SizeConfig.v(16)),
-                          const Text("Google"),
-                        ],
-                      ),
+            ),
+            Row(
+              children: [
+                const Expanded(child: Divider()),
+                SizedBox(width: SizeConfig.v(16)),
+                const Text("yoki"),
+                SizedBox(width: SizeConfig.v(16)),
+                const Expanded(child: Divider()),
+              ],
+            ),
+            SizedBox(height: SizeConfig.h(40)),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: SizeConfig.h(62),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 20,
+                          spreadRadius: 0,
+                          offset: const Offset(0, 0),
+                          color: const Color(0xFF0C1230).withOpacity(.07),
+                        )
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppIcons.google.svg(),
+                        SizedBox(width: SizeConfig.v(16)),
+                        const Text("Google"),
+                      ],
                     ),
                   ),
-                  SizedBox(width: SizeConfig.v(20)),
-                  Expanded(
-                    child: Container(
-                      height: SizeConfig.h(62),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 20,
-                            spreadRadius: 0,
-                            offset: const Offset(0, 0),
-                            color: const Color(0xFF0C1230).withOpacity(.07),
-                          )
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AppIcons.fb.svg(),
-                          SizedBox(width: SizeConfig.v(16)),
-                          const Text("Facebook"),
-                        ],
-                      ),
+                ),
+                SizedBox(width: SizeConfig.v(20)),
+                Expanded(
+                  child: Container(
+                    height: SizeConfig.h(62),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 20,
+                          spreadRadius: 0,
+                          offset: const Offset(0, 0),
+                          color: const Color(0xFF0C1230).withOpacity(.07),
+                        )
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppIcons.fb.svg(),
+                        SizedBox(width: SizeConfig.v(16)),
+                        const Text("Facebook"),
+                      ],
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: SizeConfig.h(60)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Yangimisiz?",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      context.go(AppRoutPath.registerUser);
-                    },
-                    child: const Text(
-                      " Ro’yxatdan o’ting",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blue,
-                      ),
+                ),
+              ],
+            ),
+            SizedBox(height: SizeConfig.h(60)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Yangimisiz?",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    context.go(AppRoutPath.registerUser);
+                  },
+                  child: const Text(
+                    " Ro’yxatdan o’ting",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.blue,
                     ),
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

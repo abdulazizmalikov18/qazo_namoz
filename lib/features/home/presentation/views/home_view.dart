@@ -123,30 +123,39 @@ class _HomeViewState extends State<HomeView> {
                             MyFunctions.dateTimeSel(dateTime, false),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: Colors.black,
+                              color: DateTime.now().isBefore(
+                                      MyFunctions.addMonths(dateTime, 1))
+                                  ? Colors.white
+                                  : Colors.black,
                             ),
                           ),
-                          const Text(
+                          Text(
                             "Qazo namozlar: 27",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
-                              color: Colors.black,
+                              color: DateTime.now().isBefore(
+                                      MyFunctions.addMonths(dateTime, 1))
+                                  ? Colors.white
+                                  : Colors.black,
                             ),
                           ),
                         ],
                       ),
                     ),
                     const SizedBox(width: 12),
-                    const Icon(
+                    Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 16,
-                      color: Colors.black,
+                      color: DateTime.now()
+                              .isBefore(MyFunctions.addMonths(dateTime, 1))
+                          ? Colors.white
+                          : Colors.black,
                     ),
                   ],
                 ),
