@@ -33,6 +33,7 @@ dependencies:
   powersync: ^1.10.0
   powersync_attachments_helper: ^0.6.16
   keyboard_dismisser: ^3.0.0
+  formz: ^0.8.0
 
 dev_dependencies:
   flutter_test:

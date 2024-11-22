@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:logging/logging.dart';
+import 'package:qazo_namoz/application/auth/auth_bloc.dart';
 import 'package:qazo_namoz/assets/colors/colosrs.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/app_routs.dart';
@@ -37,23 +39,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      routerConfig: AppRouts.router,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.green),
-        useMaterial3: true,
+    return BlocProvider(
+      create: (context) => AuthBloc()..add(GetMeEvent()),
+      child: MaterialApp.router(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        routerConfig: AppRouts.router,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.green),
+          useMaterial3: true,
+        ),
+        builder: (context, child) {
+          SizeConfig().init(context);
+          if (isLogin) {
+          } else {
+            AppRouts.router.go(AppRoutPath.login);
+          }
+          return BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              switch (state.statusAuth) {
+                case AuthenticationStatus.unauthenticated:
+                  AppRouts.router.pushReplacement(AppRoutPath.login);
+                  break;
+                case AuthenticationStatus.authenticated:
+                  AppRouts.router.go(AppRoutPath.home);
+                  break;
+                case AuthenticationStatus.loading:
+                case AuthenticationStatus.cancelLoading:
+                  break;
+              }
+            },
+            child: KeyboardDismisser(child: child),
+          );
+        },
       ),
-      builder: (context, child) {
-        SizeConfig().init(context);
-        if (isLogin) {
-          AppRouts.router.go(AppRoutPath.home);
-        } else {
-          AppRouts.router.go(AppRoutPath.login);
-        }
-        return KeyboardDismisser(child: child);
-      },
     );
   }
 }

@@ -22,6 +22,7 @@ Schema schema = Schema(([
     Column.text('name'),
     Column.text('owner_id')
   ]),
+  const Table('profiles', [Column.text('username'), Column.text('created_at')]),
   AttachmentsQueueTable(
       attachmentsQueueTableName: defaultAttachmentsQueueTableName)
 ]));

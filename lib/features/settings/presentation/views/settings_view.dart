@@ -4,6 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+Future<void> logout() async {
+  await Supabase.instance.client.auth.signOut();
+}
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -79,8 +84,9 @@ class SettingsView extends StatelessWidget {
                       ),
                       CupertinoDialogAction(
                         isDestructiveAction: true,
-                        onPressed: () {
+                        onPressed: () async{
                           context.pushReplacement(AppRoutPath.login);
+                          await logout();
                         },
                         child: const Text('Ha'),
                       ),
