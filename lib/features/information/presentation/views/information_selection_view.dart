@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/core/utils/size_config.dart';
+import 'package:qazo_namoz/models/questions_model.dart';
 
 class InformationSelectionView extends StatelessWidget {
-  const InformationSelectionView({super.key});
+  const InformationSelectionView({super.key, required this.model});
+  final QuestionsModel model;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Ma’lumot"),
-      ),
+      appBar: AppBar(title: Text(model.title)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -20,9 +20,9 @@ class InformationSelectionView extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: SizeConfig.h(12)),
-            const Text(
-              "Varius tempus est potenti sit viverra. Vel integer interdum fringilla vestibulum ac consectetur nunc?",
-              style: TextStyle(
+            Text(
+              model.questions,
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
@@ -33,9 +33,9 @@ class InformationSelectionView extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: SizeConfig.h(12)),
-            const Text(
-              "Volutpat enim at eget rhoncus. Purus posuere gravida vestibulum magna. Nulla mattis accumsan, ac at. Curabitur pellentesque urna dui egestas cum massa nascetur diam. Risus fusce phasellus gravida donec velit accumsan est platea. Porttitor tempus, et vulputate donec. Et, quis sed pulvinar sed iaculis sollicitudin maecenas at. Hac turpis viverra ut in etiam fermentum. Felis senectus fermentum risus tortor amet quis eu dictum pretium. Aliquam id ipsum et amet sed pretium.",
-              style: TextStyle(
+            Text(
+              model.commit,
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),

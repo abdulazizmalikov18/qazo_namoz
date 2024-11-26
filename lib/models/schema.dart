@@ -22,7 +22,14 @@ Schema schema = Schema(([
     Column.text('name'),
     Column.text('owner_id')
   ]),
-  const Table('profiles', [Column.text('username'), Column.text('created_at')]),
+  const Table('profiles', [
+    Column.text('username'),
+    Column.text('created_at'),
+    Column.text('birthday'),
+    Column.text('day_of_puberty'),
+    Column.text('start_date')
+  ]),
   AttachmentsQueueTable(
-      attachmentsQueueTableName: defaultAttachmentsQueueTableName)
+    attachmentsQueueTableName: defaultAttachmentsQueueTableName,
+  )
 ]));

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/core/utils/constants.dart';
-import 'package:qazo_namoz/core/utils/log_service.dart';
+// import 'package:qazo_namoz/core/utils/log_service.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
+import 'package:qazo_namoz/features/information/presentation/views/information_create_view.dart';
+import 'package:qazo_namoz/models/questions_model.dart';
 
 class InformationView extends StatelessWidget {
   const InformationView({super.key});
@@ -14,32 +16,35 @@ class InformationView extends StatelessWidget {
         title: const Text("Ma’lumot"),
       ),
       floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add_rounded),
         onPressed: () async {
-          final respons = await supabase.from('questions').insert({
-            'commit': 'Qanday qilib',
-            'title': 'Qanday axir',
-            'questions': 'Nimaga bilmiman'
-          }).select();
-          Log.i(respons);
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const InformationCreateView(),
+          ));
         },
       ),
       body: FutureBuilder(
         future: supabase.from('questions').select(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            final list =
+                snapshot.data!.map((e) => QuestionsModel.fromJson(e)).toList();
             return ListView.separated(
               padding: const EdgeInsets.all(16),
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
-                  context.push(AppRoutPath.informationSelection);
+                  context.push(
+                    AppRoutPath.informationSelection,
+                    extra: list[index],
+                  );
                 },
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: Text(snapshot.data![index]['title']),
+                  child: Text(list[index].title),
                 ),
               ),
               separatorBuilder: (context, index) => const Divider(),
-              itemCount: snapshot.data!.length,
+              itemCount: list.length,
             );
           }
           return const Center(child: CircularProgressIndicator.adaptive());

@@ -53,10 +53,11 @@ class SupabaseConnector extends PowerSyncBackendConnector {
         ? null
         : DateTime.fromMillisecondsSinceEpoch(session.expiresAt! * 1000);
     return PowerSyncCredentials(
-        endpoint: AppConfig.powersyncUrl,
-        token: token,
-        userId: userId,
-        expiresAt: expiresAt);
+      endpoint: AppConfig.powersyncUrl,
+      token: token,
+      userId: userId,
+      expiresAt: expiresAt,
+    );
   }
 
   @override

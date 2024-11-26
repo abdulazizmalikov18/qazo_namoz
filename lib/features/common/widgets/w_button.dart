@@ -56,6 +56,7 @@ class WButton extends StatelessWidget {
           width: width,
           height: height ?? 56,
           padding: padding,
+          margin: margin,
           decoration: BoxDecoration(
             border: border,
             borderRadius: BorderRadius.circular(borderRadius),

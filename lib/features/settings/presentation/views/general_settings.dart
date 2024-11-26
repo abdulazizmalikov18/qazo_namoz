@@ -14,7 +14,23 @@ class GeneralSettings extends StatefulWidget {
 }
 
 class _GeneralSettingsState extends State<GeneralSettings> {
+  late TextEditingController controllerphone;
+  late TextEditingController password;
+  late TextEditingController birthday;
+  late TextEditingController dayOfPuberty;
+  late TextEditingController startDate;
   bool isObscure = false;
+
+  @override
+  void initState() {
+    final profile = context.read<AuthBloc>().state.profile;
+    controllerphone = TextEditingController(text: profile.username);
+    birthday = TextEditingController(text: profile.birthday);
+    dayOfPuberty = TextEditingController(text: profile.dayOfPuberty);
+    startDate = TextEditingController(text: profile.startDate);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +45,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                 const Text("Telefon raqam"),
                 TextFormField(
                   inputFormatters: [Formatters.phoneFormatter],
+                  controller: controllerphone,
                   decoration: const InputDecoration(
                     prefixIcon: Icon(CupertinoIcons.phone),
                     hintText: "Raqamingizni yozing",
@@ -55,7 +72,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                 SizedBox(height: SizeConfig.h(32)),
                 const Text("Tug’ilgan kun"),
                 TextFormField(
-                  inputFormatters: [Formatters.phoneFormatter],
+                  controller: birthday,
                   decoration: const InputDecoration(
                     hintText: "24.11.2000",
                   ),
@@ -63,7 +80,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                 SizedBox(height: SizeConfig.h(32)),
                 const Text("Birinchi ehtilom/hayz payti"),
                 TextFormField(
-                  inputFormatters: [Formatters.phoneFormatter],
+                  controller: dayOfPuberty,
                   decoration: const InputDecoration(
                     hintText: "24.11.2000",
                   ),
@@ -71,7 +88,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                 SizedBox(height: SizeConfig.h(32)),
                 const Text("Namoz boshlangan kun"),
                 TextFormField(
-                  inputFormatters: [Formatters.phoneFormatter],
+                  controller: startDate,
                   decoration: const InputDecoration(
                     hintText: "24.11.2000",
                   ),

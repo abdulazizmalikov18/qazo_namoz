@@ -6,27 +6,34 @@ class Profile {
     this.id = '',
     this.username = '',
     this.createdAt = '',
+    this.birthday = '',
+    this.dayOfPuberty = '',
+    this.startDate = '',
   });
 
-  /// User ID of the profile
   final String id;
-
-  /// Username of the profile
   final String username;
-
-  /// Date and time when the profile was created
   final String createdAt;
+  final String birthday;
+  final String dayOfPuberty;
+  final String startDate;
 
   Profile.fromMap(Map<String, dynamic> map)
       : id = map['id'],
         username = map['username'],
-        createdAt = map['created_at'];
+        createdAt = map['created_at'],
+        dayOfPuberty = map['day_of_puberty'],
+        startDate = map['start_date'],
+        birthday = map['birthday'];
 
   factory Profile.fromRow(sqlite.Row row) {
     return Profile(
       id: row['id'],
       username: row['username'],
       createdAt: row['created_at'],
+      birthday: row['birthday'],
+      dayOfPuberty: row['day_of_puberty'],
+      startDate: row['start_date'],
     );
   }
 

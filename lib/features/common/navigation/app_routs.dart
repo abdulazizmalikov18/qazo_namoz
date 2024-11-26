@@ -20,6 +20,7 @@ import 'package:qazo_namoz/features/onboardeing/presentation/views/splash_views.
 import 'package:qazo_namoz/features/settings/presentation/views/general_settings.dart';
 import 'package:qazo_namoz/features/settings/presentation/views/lenguage_view.dart';
 import 'package:qazo_namoz/features/settings/presentation/views/settings_view.dart';
+import 'package:qazo_namoz/models/questions_model.dart';
 
 sealed class AppRouts {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -107,7 +108,9 @@ sealed class AppRouts {
               ),
               GoRoute(
                 path: AppRoutPath.informationSelection,
-                builder: (context, state) => const InformationSelectionView(),
+                builder: (context, state) => InformationSelectionView(
+                  model: state.extra as QuestionsModel,
+                ),
               ),
             ],
           ),
