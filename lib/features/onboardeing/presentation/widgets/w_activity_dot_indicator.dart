@@ -5,8 +5,11 @@ class WActivityDotted extends StatelessWidget {
   final int dotCount;
   final int active;
 
-  const WActivityDotted(
-      {super.key, required this.dotCount, required this.active});
+  const WActivityDotted({
+    super.key,
+    required this.dotCount,
+    required this.active,
+  });
 
   @override
   Widget build(BuildContext context) {
