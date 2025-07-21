@@ -9,7 +9,6 @@ class LoggerInterceptor extends Interceptor {
       lineLength: 75,
       colors: true,
       printEmojis: true,
-      printTime: false,
     ),
   );
 

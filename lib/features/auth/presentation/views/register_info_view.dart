@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/colors/colosrs.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
 import 'package:qazo_namoz/core/utils/my_function.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/auth/presentation/controllers/controller_register.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
@@ -105,7 +104,6 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
             ),
             child: WButton(
               onTap: () {
-                print("====>>> ${vm.ehtilam.year}");
                 if (index.value != list.length - 1) {
                   controller.animateToPage(
                     index.value + 1,
@@ -149,7 +147,7 @@ class RegisterBrithDay extends StatelessWidget {
                 .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(height: SizeConfig.h(40)),
+        SizedBox(height: 40),
         SizedBox(
           width: double.infinity,
           height: 220,
@@ -188,9 +186,9 @@ class RegisterEhtilam extends StatelessWidget {
                 .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(height: SizeConfig.h(12)),
+        SizedBox(height: 12),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: SizeConfig.v(30)),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           child: Text(
             'Musulmon kishiga shu vaqtdan boshlab namoz farz bo’ladi.',
             textAlign: TextAlign.center,
@@ -198,7 +196,7 @@ class RegisterEhtilam extends StatelessWidget {
                 Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
           ),
         ),
-        SizedBox(height: SizeConfig.h(40)),
+        SizedBox(height: 40),
         SizedBox(
           width: double.infinity,
           height: 220,
@@ -237,9 +235,9 @@ class RegisterStartPrayer extends StatelessWidget {
                 .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
           ),
         ),
-        SizedBox(height: SizeConfig.h(12)),
+        SizedBox(height: 12),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: SizeConfig.v(30)),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           child: Text(
             'Shunga qarab qazo namozlaringiz hisoblanadi',
             textAlign: TextAlign.center,
@@ -247,7 +245,7 @@ class RegisterStartPrayer extends StatelessWidget {
                 Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
           ),
         ),
-        SizedBox(height: SizeConfig.h(40)),
+        SizedBox(height: 40),
         SizedBox(
           width: double.infinity,
           height: 220,
@@ -288,9 +286,9 @@ class RegisterConfirmation extends StatelessWidget {
                   .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
             ),
           ),
-          SizedBox(height: SizeConfig.h(12)),
+          SizedBox(height: 12),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SizeConfig.v(30)),
+            padding: EdgeInsets.symmetric(horizontal: 30),
             child: Text(
               'Ma’lumotlaringiz to’g’riligini tekshiring',
               textAlign: TextAlign.center,
@@ -298,7 +296,7 @@ class RegisterConfirmation extends StatelessWidget {
                   Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
             ),
           ),
-          SizedBox(height: SizeConfig.h(40)),
+          SizedBox(height: 40),
           TitleInfo(
             title: 'Tug’ilgan kuningiz:',
             info: MyFunctions.dateTimeFormatMonth(vm.brithDay),

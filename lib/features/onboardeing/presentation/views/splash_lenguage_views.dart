@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 
 class SplashLenguageView extends StatelessWidget {
   const SplashLenguageView({super.key});
@@ -13,14 +12,14 @@ class SplashLenguageView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            SizedBox(height: SizeConfig.h(200)),
+            SizedBox(height: 200),
             AppIcons.logo.svg(),
-            SizedBox(height: SizeConfig.h(80)),
+            SizedBox(height: 80),
             Text(
               "Tilni tanlang / Выберите язык",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            SizedBox(height: SizeConfig.h(120)),
+            SizedBox(height: 120),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(

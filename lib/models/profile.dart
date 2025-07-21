@@ -1,6 +1,3 @@
-import 'package:powersync/sqlite3_common.dart' as sqlite;
-import '../powersync.dart';
-
 class Profile {
   const Profile({
     this.id = '',
@@ -25,20 +22,4 @@ class Profile {
         dayOfPuberty = map['day_of_puberty'],
         startDate = map['start_date'],
         birthday = map['birthday'];
-
-  factory Profile.fromRow(sqlite.Row row) {
-    return Profile(
-      id: row['id'],
-      username: row['username'],
-      createdAt: row['created_at'],
-      birthday: row['birthday'],
-      dayOfPuberty: row['day_of_puberty'],
-      startDate: row['start_date'],
-    );
-  }
-
-  static Future<Profile> findProfileById(String id) async {
-    final result = await db.get('SELECT * FROM profiles where id = ?', [id]);
-    return Profile.fromRow(result);
-  }
 }

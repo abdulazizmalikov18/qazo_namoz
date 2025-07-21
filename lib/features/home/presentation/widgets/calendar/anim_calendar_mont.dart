@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/colors/colosrs.dart';
 import 'package:qazo_namoz/core/utils/my_function.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/month_view_anim.dart';
 
 class AnimCalendarMonth extends StatefulWidget {
@@ -40,7 +39,7 @@ class _AnimCalendarMonthState extends State<AnimCalendarMonth> {
       onTapDay: (DateTime day) {
         showModalBottomSheet(
           context: context,
-          constraints: BoxConstraints(maxHeight: SizeConfig.h(400)),
+          constraints: BoxConstraints(maxHeight: 400),
           builder: (context) => Column(
             children: [
               Container(
@@ -86,7 +85,7 @@ class _AnimCalendarMonthState extends State<AnimCalendarMonth> {
                   ],
                 ),
               ),
-              SizedBox(height: SizeConfig.h(16)),
+              SizedBox(height: 16),
               WCheckBoxTile(
                 value: false,
                 onChanged: (value) {},

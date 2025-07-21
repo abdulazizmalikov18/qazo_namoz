@@ -1,14 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:logging/logging.dart';
 import 'package:qazo_namoz/application/auth/auth_bloc.dart';
 import 'package:qazo_namoz/assets/colors/colosrs.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/app_routs.dart';
-import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
-import 'package:qazo_namoz/powersync.dart';
+import 'package:qazo_namoz/supabase.dart';
 
 void main() async {
   Logger.root.level = Level.INFO;
@@ -27,15 +24,12 @@ void main() async {
   });
 
   WidgetsFlutterBinding.ensureInitialized();
-  await openDatabase();
-
-  final loggedIn = isLoggedIn();
-  runApp(MyApp(isLogin: loggedIn));
+  await loadSupabase();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.isLogin});
-  final bool isLogin;
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,29 +43,25 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.green),
           useMaterial3: true,
         ),
-        builder: (context, child) {
-          SizeConfig().init(context);
-          if (isLogin) {
-          } else {
-            AppRouts.router.go(AppRoutPath.login);
-          }
-          return BlocListener<AuthBloc, AuthState>(
-            listener: (context, state) {
-              switch (state.statusAuth) {
-                case AuthenticationStatus.unauthenticated:
-                  AppRouts.router.pushReplacement(AppRoutPath.login);
-                  break;
-                case AuthenticationStatus.authenticated:
-                  AppRouts.router.go(AppRoutPath.home);
-                  break;
-                case AuthenticationStatus.loading:
-                case AuthenticationStatus.cancelLoading:
-                  break;
-              }
-            },
-            child: KeyboardDismisser(child: child),
-          );
-        },
+        // builder: (context, child) {
+        //   SizeConfig().init(context);
+        //   return BlocListener<AuthBloc, AuthState>(
+        //     listener: (context, state) {
+        //       switch (state.statusAuth) {
+        //         case AuthenticationStatus.unauthenticated:
+        //           AppRouts.router.pushReplacement(AppRoutPath.login);
+        //           break;
+        //         case AuthenticationStatus.authenticated:
+        //           AppRouts.router.go(AppRoutPath.home);
+        //           break;
+        //         case AuthenticationStatus.loading:
+        //         case AuthenticationStatus.cancelLoading:
+        //           break;
+        //       }
+        //     },
+        //     child: KeyboardDismisser(child: child),
+        //   );
+        // },
       ),
     );
   }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 
 class MentionsView extends StatelessWidget {
@@ -18,7 +16,7 @@ class MentionsView extends StatelessWidget {
             context.push(AppRoutPath.mentionSelection);
           },
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: SizeConfig.h(8)),
+            padding: EdgeInsets.symmetric(vertical: 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -51,7 +49,7 @@ class MentionsView extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: SizeConfig.h(8)),
+                SizedBox(height: 8),
                 const Text(
                   "Alloh barcha kamchiliklardan pokdir.",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),

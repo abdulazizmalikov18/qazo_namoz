@@ -7,7 +7,6 @@ import 'package:qazo_namoz/application/auth/auth_bloc.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
 import 'package:qazo_namoz/core/utils/constants.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 
@@ -50,7 +49,7 @@ class _RegisterViewsState extends State<RegisterViews> {
                   )
                 ],
               ),
-              SizedBox(height: SizeConfig.h(120)),
+              SizedBox(height: 120),
               const Text("Telefon raqam"),
               TextFormField(
                 // inputFormatters: [Formatters.phoneFormatter],
@@ -60,7 +59,7 @@ class _RegisterViewsState extends State<RegisterViews> {
                   hintText: "Emailingizni yozing",
                 ),
               ),
-              SizedBox(height: SizeConfig.h(16)),
+              SizedBox(height: 16),
               const Text("Parol yarating"),
               TextFormField(
                 obscureText: isObscure,
@@ -79,9 +78,9 @@ class _RegisterViewsState extends State<RegisterViews> {
                   hintText: "Yangi parol yozing",
                 ),
               ),
-              SizedBox(height: SizeConfig.h(16)),
+              SizedBox(height: 16),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.h(40)),
+                padding: EdgeInsets.symmetric(vertical: 40),
                 child: WButton(
                   onTap: () {
                     final isValid = _formKey.currentState!.validate();
@@ -106,18 +105,18 @@ class _RegisterViewsState extends State<RegisterViews> {
               Row(
                 children: [
                   const Expanded(child: Divider()),
-                  SizedBox(width: SizeConfig.v(16)),
+                  SizedBox(width: 16),
                   const Text("yoki"),
-                  SizedBox(width: SizeConfig.v(16)),
+                  SizedBox(width: 16),
                   const Expanded(child: Divider()),
                 ],
               ),
-              SizedBox(height: SizeConfig.h(40)),
+              SizedBox(height: 40),
               Row(
                 children: [
                   Expanded(
                     child: Container(
-                      height: SizeConfig.h(62),
+                      height: 62,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
@@ -126,7 +125,8 @@ class _RegisterViewsState extends State<RegisterViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color: const Color(0xFF0C1230).withOpacity(.07),
+                            color:
+                                const Color(0xFF0C1230).withValues(alpha: .07),
                           )
                         ],
                       ),
@@ -134,16 +134,16 @@ class _RegisterViewsState extends State<RegisterViews> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AppIcons.google.svg(),
-                          SizedBox(width: SizeConfig.v(16)),
+                          SizedBox(width: 16),
                           const Text("Google"),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(width: SizeConfig.v(20)),
+                  SizedBox(width: 20),
                   Expanded(
                     child: Container(
-                      height: SizeConfig.h(62),
+                      height: 62,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
@@ -152,7 +152,8 @@ class _RegisterViewsState extends State<RegisterViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color: const Color(0xFF0C1230).withOpacity(.07),
+                            color:
+                                const Color(0xFF0C1230).withValues(alpha: .07),
                           )
                         ],
                       ),
@@ -160,7 +161,7 @@ class _RegisterViewsState extends State<RegisterViews> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AppIcons.fb.svg(),
-                          SizedBox(width: SizeConfig.v(16)),
+                          SizedBox(width: 16),
                           const Text("Facebook"),
                         ],
                       ),
@@ -168,7 +169,7 @@ class _RegisterViewsState extends State<RegisterViews> {
                   ),
                 ],
               ),
-              SizedBox(height: SizeConfig.h(60)),
+              SizedBox(height: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -29,14 +28,15 @@ class SettingsView extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: SizeConfig.h(40)),
-            Image.asset(AppImages.setting, height: SizeConfig.h(220)),
-            SizedBox(height: SizeConfig.h(40)),
+            SizedBox(height: 40),
+            Image.asset(AppImages.setting, height: 220),
+            SizedBox(height: 40),
             ListTile(
               title: const Text("Umumiy"),
               onTap: () {
                 context.push(AppRoutPath.generalSettings);
               },
+              contentPadding: EdgeInsets.zero,
               leading: Container(
                 height: 36,
                 width: 36,
@@ -50,6 +50,7 @@ class SettingsView extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
+              contentPadding: EdgeInsets.zero,
               title: const Text("Tilni o’zgartirish"),
               onTap: () {
                 context.push(AppRoutPath.lenguage);
@@ -67,6 +68,7 @@ class SettingsView extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
+              contentPadding: EdgeInsets.zero,
               title: const Text("Tizimdan chiqish"),
               onTap: () {
                 showAdaptiveDialog(
@@ -84,7 +86,7 @@ class SettingsView extends StatelessWidget {
                       ),
                       CupertinoDialogAction(
                         isDestructiveAction: true,
-                        onPressed: () async{
+                        onPressed: () async {
                           context.pushReplacement(AppRoutPath.login);
                           await logout();
                         },

@@ -24,7 +24,7 @@ class WActivityDotted extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               color: active == i
                   ? AppColors.green
-                  : AppColors.green.withOpacity(.2),
+                  : AppColors.green.withValues(alpha: .2),
             ),
             duration: const Duration(milliseconds: 300),
           ),

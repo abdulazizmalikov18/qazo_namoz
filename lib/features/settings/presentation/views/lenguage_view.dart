@@ -19,11 +19,13 @@ class _LenguageViewState extends State<LenguageView> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
+              contentPadding: EdgeInsets.zero,
               leading: Image.asset(AppImages.uz, height: 36),
               title: const Text("O’zbek tili"),
             ),
             const Divider(),
             ListTile(
+              contentPadding: EdgeInsets.zero,
               leading: Image.asset(
                 AppImages.uz,
                 height: 36,
@@ -32,6 +34,7 @@ class _LenguageViewState extends State<LenguageView> {
             ),
             const Divider(),
             ListTile(
+              contentPadding: EdgeInsets.zero,
               leading: Container(
                 height: 36,
                 width: 36,

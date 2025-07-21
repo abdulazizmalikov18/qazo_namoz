@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:qazo_namoz/core/utils/constants.dart';
 import 'package:qazo_namoz/models/profile.dart';
-import 'package:qazo_namoz/powersync.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'auth_event.dart';
@@ -21,19 +20,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(const AuthState()) {
     on<GetMeEvent>((event, emit) async {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-      if (isLoggedIn()) {
-        final profile = await Profile.findProfileById(getUserId() ?? "");
-        emit(state.copyWith(
-          profile: profile,
-          status: FormzSubmissionStatus.success,
-          statusAuth: AuthenticationStatus.authenticated,
-        ));
-      } else {
-        emit(state.copyWith(
-          status: FormzSubmissionStatus.failure,
-          statusAuth: AuthenticationStatus.unauthenticated,
-        ));
-      }
+      emit(state.copyWith(
+        status: FormzSubmissionStatus.failure,
+        statusAuth: AuthenticationStatus.unauthenticated,
+      ));
     });
     on<LoginEvent>((event, emit) async {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));

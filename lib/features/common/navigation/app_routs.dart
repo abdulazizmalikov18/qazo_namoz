@@ -28,7 +28,7 @@ sealed class AppRouts {
 
   static GoRouter router = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: AppRoutPath.splash,
+    initialLocation: AppRoutPath.home,
     errorBuilder: (context, state) => const ErrorScreen(),
     routes: [
       GoRoute(

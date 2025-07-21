@@ -1,4 +1,4 @@
-library interpolate;
+library;
 
 enum Extrapolate {
   extend,
@@ -7,26 +7,26 @@ enum Extrapolate {
   clampEnd,
 }
 
-/// @param: List<double> inputRage
-///
-/// @param: List<double> outputRage
-///
-/// @param: Extrapolate extrapolate =  Extrapolate.extend
 class Interpolate {
   late List<double> _x;
   late List<double> _y;
   late Extrapolate extrapolate;
 
-  Interpolate(
-      {required List<double> inputRange,
-        required List<double> outputRange,
-        this.extrapolate = Extrapolate.extend}) {
+  Interpolate({
+    required List<double> inputRange,
+    required List<double> outputRange,
+    this.extrapolate = Extrapolate.extend,
+  }) {
     _x = inputRange.map((e) => e.toDouble()).toList();
     _y = outputRange.map((e) => e.toDouble()).toList();
-    assert(_x.length == _y.length,
-    'interpolate: the length of inputRange must be equal to the length ot the outputRange');
-    assert(_x.length >= 2 && _y.length >= 2,
-    'interpolate: the range should have more than two data points');
+    assert(
+      _x.length == _y.length,
+      'interpolate: the length of inputRange must be equal to the length ot the outputRange',
+    );
+    assert(
+      _x.length >= 2 && _y.length >= 2,
+      'interpolate: the range should have more than two data points',
+    );
   }
 
   /// execute the interpolation in the range

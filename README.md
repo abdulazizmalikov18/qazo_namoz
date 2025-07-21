@@ -29,5 +29,5 @@ build runner:
 flutter pub run build_runner build --delete-conflicting-outputs
 
 rename app:
-rename setAppName --targets ios,android --value "Qazo namozlar"   
+rename setAppName --targets ios,android --value "Qazo Namoz"   
 rename setBundleId --targets ios,android --value "com.mazmun.qazonamoz" 

@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/colors/colosrs.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 
 class MentionSelectionView extends StatefulWidget {
   const MentionSelectionView({super.key});
@@ -29,23 +28,23 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: SizeConfig.h(80)),
+            SizedBox(height: 80),
             const Text(
               "Ey, Allohning rasuli, sizga Allohning salomi bo’lsin",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: SizeConfig.h(60)),
+            SizedBox(height: 60),
             SizedBox(
-              height: SizeConfig.h(200),
-              width: SizeConfig.v(200),
+              height: 200,
+              width: 200,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
                   CircularProgressIndicator(
                     value: (progres / dan),
                     strokeWidth: 16,
-                    backgroundColor: AppColors.green.withOpacity(.2),
+                    backgroundColor: AppColors.green.withValues(alpha: .2),
                     color: AppColors.green,
                   ),
                   Center(
@@ -72,7 +71,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                 ],
               ),
             ),
-            SizedBox(height: SizeConfig.h(100)),
+            SizedBox(height: 100),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -88,8 +87,8 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                   ),
                 ),
                 Container(
-                  height: SizeConfig.h(84),
-                  width: SizeConfig.v(84),
+                  height: 84,
+                  width: 84,
                   decoration: BoxDecoration(
                     border: Border.all(),
                     shape: BoxShape.circle,
@@ -106,7 +105,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
-                      constraints: BoxConstraints(maxHeight: SizeConfig.h(160)),
+                      constraints: BoxConstraints(maxHeight: 160),
                       builder: (context) => Column(
                         children: [
                           Container(
@@ -168,7 +167,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                               ],
                             ),
                           ),
-                          SizedBox(height: SizeConfig.h(16)),
+                          SizedBox(height: 16),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Column(
@@ -176,7 +175,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const Text("Kunlik zikrlar miqdorini kiriting"),
-                                SizedBox(height: SizeConfig.h(8)),
+                                SizedBox(height: 8),
                                 TextFormField(
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qazo_namoz/assets/constants/icons.dart';
 import 'package:qazo_namoz/core/utils/my_function.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/navigation/routs_contact.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 
@@ -18,7 +17,7 @@ class RegisterTitleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppIcons.questChat.svg(),
-            SizedBox(height: SizeConfig.h(40)),
+            SizedBox(height: 40),
             const Text(
               "Qazo namozlaringizni aniqlash uchun bizga ba’zi ma’lumotlaringiz kerak bo’ladi ",
               textAlign: TextAlign.center,

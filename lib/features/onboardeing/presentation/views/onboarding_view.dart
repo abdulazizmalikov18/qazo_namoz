@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/assets/constants/images.dart';
 import 'package:qazo_namoz/core/utils/my_function.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 import 'package:qazo_namoz/features/onboardeing/domain/entity/onboarding_entity.dart';
 import 'package:qazo_namoz/features/onboardeing/presentation/widgets/w_activity_dot_indicator.dart';
@@ -52,19 +51,19 @@ class _OnboardingViewState extends State<OnboardingView> {
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    height: SizeConfig.h(380),
+                    height: 380,
                     child: Image.asset(
                       list[index].image,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(height: SizeConfig.h(100)),
+                  SizedBox(height: 100),
                   Text(
                     list[index].title,
                     style: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(height: SizeConfig.h(16)),
+                  SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
@@ -80,7 +79,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             ),
           ),
           Positioned(
-            top: SizeConfig.h(420),
+            top: 420,
             left: 0,
             right: 0,
             child: ValueListenableBuilder(

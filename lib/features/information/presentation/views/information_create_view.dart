@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qazo_namoz/core/utils/constants.dart';
 import 'package:qazo_namoz/core/utils/log_service.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 
 class InformationCreateView extends StatefulWidget {
@@ -69,7 +68,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
                 hintText: "Title",
               ),
             ),
-            SizedBox(height: SizeConfig.h(24)),
+            SizedBox(height: 24),
             const Text("Savol"),
             TextFormField(
               controller: controllerQuest,
@@ -79,7 +78,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
                 hintText: "Savol",
               ),
             ),
-            SizedBox(height: SizeConfig.h(24)),
+            SizedBox(height: 24),
             const Text("Javob"),
             TextFormField(
               controller: controllerCommit,
@@ -89,7 +88,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
                 hintText: "Javob",
               ),
             ),
-            SizedBox(height: SizeConfig.h(24)),
+            SizedBox(height: 24),
             const Text("Manbasi"),
             TextFormField(
               controller: controllerWhoDid,
@@ -97,7 +96,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
                 hintText: "Manbasi",
               ),
             ),
-            SizedBox(height: SizeConfig.h(24)),
+            SizedBox(height: 24),
             const Text("Url"),
             TextFormField(
               controller: controllerUrl,

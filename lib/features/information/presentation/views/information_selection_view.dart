@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/models/questions_model.dart';
 
 class InformationSelectionView extends StatelessWidget {
@@ -19,7 +18,7 @@ class InformationSelectionView extends StatelessWidget {
               "Savol:",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: SizeConfig.h(12)),
+            SizedBox(height: 12),
             Text(
               model.questions,
               style: const TextStyle(
@@ -27,12 +26,12 @@ class InformationSelectionView extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: SizeConfig.h(24)),
+            SizedBox(height: 24),
             const Text(
               "Javob:",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: SizeConfig.h(12)),
+            SizedBox(height: 12),
             Text(
               model.commit,
               style: const TextStyle(

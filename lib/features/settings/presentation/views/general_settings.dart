@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qazo_namoz/application/auth/auth_bloc.dart';
 import 'package:qazo_namoz/core/utils/formatters.dart';
-import 'package:qazo_namoz/core/utils/size_config.dart';
 import 'package:qazo_namoz/features/common/widgets/w_button.dart';
 
 class GeneralSettings extends StatefulWidget {
@@ -51,7 +50,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                     hintText: "Raqamingizni yozing",
                   ),
                 ),
-                SizedBox(height: SizeConfig.h(32)),
+                SizedBox(height: 32),
                 const Text("Parol yarating"),
                 TextFormField(
                   obscureText: isObscure,
@@ -69,7 +68,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                     hintText: "Yangi parol yozing",
                   ),
                 ),
-                SizedBox(height: SizeConfig.h(32)),
+                SizedBox(height: 32),
                 const Text("Tug’ilgan kun"),
                 TextFormField(
                   controller: birthday,
@@ -77,7 +76,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                     hintText: "24.11.2000",
                   ),
                 ),
-                SizedBox(height: SizeConfig.h(32)),
+                SizedBox(height: 32),
                 const Text("Birinchi ehtilom/hayz payti"),
                 TextFormField(
                   controller: dayOfPuberty,
@@ -85,7 +84,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                     hintText: "24.11.2000",
                   ),
                 ),
-                SizedBox(height: SizeConfig.h(32)),
+                SizedBox(height: 32),
                 const Text("Namoz boshlangan kun"),
                 TextFormField(
                   controller: startDate,
@@ -93,7 +92,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                     hintText: "24.11.2000",
                   ),
                 ),
-                SizedBox(height: SizeConfig.h(32)),
+                SizedBox(height: 32),
               ],
             ),
           );
