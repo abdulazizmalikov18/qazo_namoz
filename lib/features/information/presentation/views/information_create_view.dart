@@ -45,7 +45,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
                   'title': controllerTitle.text,
                   'questions': controllerQuest.text,
                   'where_did': controllerWhoDid.text,
-                  'url': controllerUrl.text
+                  'url': controllerUrl.text,
                 }).select();
                 Log.i(respons);
               } else {
@@ -64,9 +64,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
             const Text("Mavzu nomi"),
             TextFormField(
               controller: controllerTitle,
-              decoration: const InputDecoration(
-                hintText: "Title",
-              ),
+              decoration: const InputDecoration(hintText: "Title"),
             ),
             SizedBox(height: 24),
             const Text("Savol"),
@@ -74,9 +72,7 @@ class _InformationCreateViewState extends State<InformationCreateView> {
               controller: controllerQuest,
               minLines: 1,
               maxLines: 5,
-              decoration: const InputDecoration(
-                hintText: "Savol",
-              ),
+              decoration: const InputDecoration(hintText: "Savol"),
             ),
             SizedBox(height: 24),
             const Text("Javob"),
@@ -84,25 +80,19 @@ class _InformationCreateViewState extends State<InformationCreateView> {
               controller: controllerCommit,
               minLines: 1,
               maxLines: 5,
-              decoration: const InputDecoration(
-                hintText: "Javob",
-              ),
+              decoration: const InputDecoration(hintText: "Javob"),
             ),
             SizedBox(height: 24),
             const Text("Manbasi"),
             TextFormField(
               controller: controllerWhoDid,
-              decoration: const InputDecoration(
-                hintText: "Manbasi",
-              ),
+              decoration: const InputDecoration(hintText: "Manbasi"),
             ),
             SizedBox(height: 24),
             const Text("Url"),
             TextFormField(
               controller: controllerUrl,
-              decoration: const InputDecoration(
-                hintText: "Url",
-              ),
+              decoration: const InputDecoration(hintText: "Url"),
             ),
           ],
         ),

@@ -22,26 +22,30 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: GestureDetector(
           onTap: () {
-            context.push(AppRoutPath.calendar, extra: {"day": dateTime}).then(
-              (value) {
-                if (value is DateTime) {
-                  dateTime = value;
-                  setState(() {});
-                }
-              },
-            );
+            context.push(AppRoutPath.calendar, extra: {"day": dateTime}).then((
+              value,
+            ) {
+              if (value is DateTime) {
+                dateTime = value;
+                setState(() {});
+              }
+            });
           },
           child: Column(
             children: [
               Text(
                 MyFunctions.dateTimeOnlyMonth(dateTime),
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               Text(
                 "${dateTime.year}-yil",
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ],
           ),
@@ -64,10 +68,7 @@ class _HomeViewState extends State<HomeView> {
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
                   children: [
-                    const Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      size: 16,
-                    ),
+                    const Icon(Icons.arrow_back_ios_new_rounded, size: 16),
                     const SizedBox(width: 12),
                     Expanded(
                       child: Column(
@@ -105,8 +106,9 @@ class _HomeViewState extends State<HomeView> {
                 color: Colors.white,
                 border: Border.all(color: AppColors.border),
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                isDisabled:
-                    DateTime.now().isBefore(MyFunctions.addMonths(dateTime, 1)),
+                isDisabled: DateTime.now().isBefore(
+                  MyFunctions.addMonths(dateTime, 1),
+                ),
                 onTap: () {
                   setState(() {
                     dateTime = MyFunctions.addMonths(dateTime, 1);
@@ -126,8 +128,10 @@ class _HomeViewState extends State<HomeView> {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: DateTime.now().isBefore(
-                                      MyFunctions.addMonths(dateTime, 1))
+                              color:
+                                  DateTime.now().isBefore(
+                                    MyFunctions.addMonths(dateTime, 1),
+                                  )
                                   ? Colors.white
                                   : Colors.black,
                             ),
@@ -139,8 +143,10 @@ class _HomeViewState extends State<HomeView> {
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
-                              color: DateTime.now().isBefore(
-                                      MyFunctions.addMonths(dateTime, 1))
+                              color:
+                                  DateTime.now().isBefore(
+                                    MyFunctions.addMonths(dateTime, 1),
+                                  )
                                   ? Colors.white
                                   : Colors.black,
                             ),
@@ -152,8 +158,10 @@ class _HomeViewState extends State<HomeView> {
                     Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 16,
-                      color: DateTime.now()
-                              .isBefore(MyFunctions.addMonths(dateTime, 1))
+                      color:
+                          DateTime.now().isBefore(
+                            MyFunctions.addMonths(dateTime, 1),
+                          )
                           ? Colors.white
                           : Colors.black,
                     ),

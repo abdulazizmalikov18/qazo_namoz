@@ -42,11 +42,7 @@ class _RegisterViewsState extends State<RegisterViews> {
                     "Ro’yxatdan o’tish",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
-                  Image.asset(
-                    AppImages.icon,
-                    height: 36,
-                    width: 36,
-                  )
+                  Image.asset(AppImages.icon, height: 36, width: 36),
                 ],
               ),
               SizedBox(height: 120),
@@ -87,16 +83,18 @@ class _RegisterViewsState extends State<RegisterViews> {
                     if (!isValid) {
                       return;
                     }
-                    context.read<AuthBloc>().add(RegisterEvent(
-                          password: _passwordController.text,
-                          phone: _emailController.text,
-                          onError: (error) {
-                            context.showErrorSnackBar(message: error);
-                          },
-                          onSucces: () {
-                            context.go(AppRoutPath.registerTitle);
-                          },
-                        ));
+                    context.read<AuthBloc>().add(
+                      RegisterEvent(
+                        password: _passwordController.text,
+                        phone: _emailController.text,
+                        onError: (error) {
+                          context.showErrorSnackBar(message: error);
+                        },
+                        onSucces: () {
+                          context.go(AppRoutPath.registerTitle);
+                        },
+                      ),
+                    );
                   },
                   text: "Yuborish",
                   isDisabled: false,
@@ -125,9 +123,10 @@ class _RegisterViewsState extends State<RegisterViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color:
-                                const Color(0xFF0C1230).withValues(alpha: .07),
-                          )
+                            color: const Color(
+                              0xFF0C1230,
+                            ).withValues(alpha: .07),
+                          ),
                         ],
                       ),
                       child: Row(
@@ -152,9 +151,10 @@ class _RegisterViewsState extends State<RegisterViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color:
-                                const Color(0xFF0C1230).withValues(alpha: .07),
-                          )
+                            color: const Color(
+                              0xFF0C1230,
+                            ).withValues(alpha: .07),
+                          ),
                         ],
                       ),
                       child: Row(

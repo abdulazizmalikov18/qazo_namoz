@@ -28,7 +28,7 @@ sealed class AppRouts {
 
   static GoRouter router = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: AppRoutPath.home,
+    initialLocation: AppRoutPath.registerInfo,
     errorBuilder: (context, state) => const ErrorScreen(),
     routes: [
       GoRoute(
@@ -82,8 +82,9 @@ sealed class AppRouts {
               GoRoute(
                 path: AppRoutPath.calendar,
                 builder: (context, state) => CalendarView(
-                  dateTime:
-                      state.extra != null ? (state.extra as Map)["day"] : 0,
+                  dateTime: state.extra != null
+                      ? (state.extra as Map)["day"]
+                      : 0,
                 ),
               ),
             ],
@@ -131,7 +132,7 @@ sealed class AppRouts {
             ],
           ),
         ],
-      )
+      ),
     ],
   );
 }

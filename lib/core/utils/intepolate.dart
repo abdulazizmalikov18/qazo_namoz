@@ -1,11 +1,6 @@
 library;
 
-enum Extrapolate {
-  extend,
-  clamp,
-  clampStart,
-  clampEnd,
-}
+enum Extrapolate { extend, clamp, clampStart, clampEnd }
 
 class Interpolate {
   late List<double> _x;
@@ -56,7 +51,10 @@ class Interpolate {
         } else {
           final i = _x.length - 1;
           return _interpolateLine(
-              [_x[i - 1], _x.last], [_y[i - 1], _y.last], val);
+            [_x[i - 1], _x.last],
+            [_y[i - 1], _y.last],
+            val,
+          );
         }
       }
     }

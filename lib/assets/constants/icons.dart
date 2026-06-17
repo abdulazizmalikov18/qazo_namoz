@@ -18,15 +18,12 @@ class AppIcons {
 }
 
 extension SvgExt on String {
-  SvgPicture svg({
-    Color? color,
-    double? width,
-    double? height,
-  }) {
+  SvgPicture svg({Color? color, double? width, double? height}) {
     return SvgPicture.asset(
       this,
-      colorFilter:
-          color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
+      colorFilter: color != null
+          ? ColorFilter.mode(color, BlendMode.srcIn)
+          : null,
       width: width,
       height: height,
     );

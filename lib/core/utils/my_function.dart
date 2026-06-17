@@ -29,8 +29,16 @@ class MyFunctions {
       year--;
     }
 
-    return DateTime(year, month, date.day, date.hour, date.minute, date.second,
-        date.millisecond, date.microsecond);
+    return DateTime(
+      year,
+      month,
+      date.day,
+      date.hour,
+      date.minute,
+      date.second,
+      date.millisecond,
+      date.microsecond,
+    );
   }
 
   static DateTime addMonths(DateTime date, int months) {
@@ -50,13 +58,22 @@ class MyFunctions {
       day = maxDaysInMonth;
     }
 
-    return DateTime(year, month, day, date.hour, date.minute, date.second,
-        date.millisecond, date.microsecond);
+    return DateTime(
+      year,
+      month,
+      day,
+      date.hour,
+      date.minute,
+      date.second,
+      date.millisecond,
+      date.microsecond,
+    );
   }
 
   static String dateTimeSel(DateTime dateTime, bool remove) {
-    final editDateTime =
-        remove ? subtractMonths(dateTime, 1) : addMonths(dateTime, 1);
+    final editDateTime = remove
+        ? subtractMonths(dateTime, 1)
+        : addMonths(dateTime, 1);
     String formattedDateTime = DateFormat('MMMM, yyyy').format(editDateTime);
     return formattedDateTime;
   }

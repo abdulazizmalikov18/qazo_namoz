@@ -9,9 +9,12 @@ part of 'namaz_date_model.dart';
 NamazDataModel _$NamazDataModelFromJson(Map<String, dynamic> json) =>
     NamazDataModel(
       dateTime: json['date_time'] as String? ?? "",
-      namaz: (json['namaz'] as List<dynamic>?)
-              ?.map((e) =>
-                  const NamazConverter().fromJson(e as Map<String, dynamic>?))
+      namaz:
+          (json['namaz'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    const NamazConverter().fromJson(e as Map<String, dynamic>?),
+              )
               .toList() ??
           const [],
     );

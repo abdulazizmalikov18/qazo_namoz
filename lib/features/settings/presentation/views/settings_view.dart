@@ -17,16 +17,17 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(
-            16, MediaQuery.of(context).viewPadding.top, 16, 16),
+          16,
+          MediaQuery.of(context).viewPadding.top,
+          16,
+          16,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
               "Sozlamalar",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w600,
-              ),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 40),
             Image.asset(AppImages.setting, height: 220),

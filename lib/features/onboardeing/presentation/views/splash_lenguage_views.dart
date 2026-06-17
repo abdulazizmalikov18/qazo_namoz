@@ -31,10 +31,7 @@ class SplashLenguageView extends StatelessWidget {
                   ),
                   const Divider(),
                   ListTile(
-                    leading: Image.asset(
-                      AppImages.uz,
-                      height: 36,
-                    ),
+                    leading: Image.asset(AppImages.uz, height: 36),
                     title: const Text("O’zbek tili"),
                   ),
                   const Divider(),
@@ -55,7 +52,7 @@ class SplashLenguageView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

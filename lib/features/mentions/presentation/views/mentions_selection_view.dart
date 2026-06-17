@@ -67,7 +67,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -81,10 +81,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                     progres = 0;
                     setState(() {});
                   },
-                  icon: const Icon(
-                    CupertinoIcons.restart,
-                    size: 28,
-                  ),
+                  icon: const Icon(CupertinoIcons.restart, size: 28),
                 ),
                 Container(
                   height: 84,
@@ -181,7 +178,7 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                                   inputFormatters: [
                                     FilteringTextInputFormatter.allow(
                                       RegExp(r'[0-9]'),
-                                    )
+                                    ),
                                   ],
                                   decoration: InputDecoration(
                                     prefixIconConstraints: const BoxConstraints(
@@ -197,15 +194,12 @@ class _MentionSelectionViewState extends State<MentionSelectionView> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                     );
                   },
-                  icon: const Icon(
-                    Icons.my_location_rounded,
-                    size: 28,
-                  ),
+                  icon: const Icon(Icons.my_location_rounded, size: 28),
                 ),
               ],
             ),

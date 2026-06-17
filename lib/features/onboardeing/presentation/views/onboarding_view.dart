@@ -52,16 +52,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                   SizedBox(
                     width: double.infinity,
                     height: 380,
-                    child: Image.asset(
-                      list[index].image,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image.asset(list[index].image, fit: BoxFit.cover),
                   ),
                   SizedBox(height: 100),
                   Text(
                     list[index].title,
                     style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.w600),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                   SizedBox(height: 16),
                   Padding(
@@ -70,9 +69,11 @@ class _OnboardingViewState extends State<OnboardingView> {
                       list[index].text,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w400),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
               itemCount: list.length,
@@ -85,10 +86,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             child: ValueListenableBuilder(
               valueListenable: index,
               builder: (BuildContext context, value, Widget? child) {
-                return WActivityDotted(
-                  dotCount: list.length,
-                  active: value,
-                );
+                return WActivityDotted(dotCount: list.length, active: value);
               },
             ),
           ),
@@ -101,10 +99,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           16,
           MyFunctions.paddingBottom(context),
         ),
-        child: WButton(
-          onTap: () {},
-          text: "Ro’yxatdan o’tish",
-        ),
+        child: WButton(onTap: () {}, text: "Ro’yxatdan o’tish"),
       ),
     );
   }

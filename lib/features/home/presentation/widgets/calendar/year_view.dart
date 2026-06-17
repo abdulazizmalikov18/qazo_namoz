@@ -37,32 +37,34 @@ class YearView extends StatelessWidget {
     final List<MonthView> monthRowChildren = <MonthView>[];
 
     for (int month = 1; month <= DateTime.monthsPerYear; month++) {
-      monthRowChildren.add(MonthView(
-        context: context,
-        year: year,
-        month: month,
-        padding: monthViewPadding,
-        currentDateColor: currentDateColor,
-        highlightedDates: highlightedDates,
-        highlightedDateColor: highlightedDateColor,
-        monthNames: monthNames,
-        onTap: onMonthTap,
-        titleStyle: monthTitleStyle,
-      ));
+      monthRowChildren.add(
+        MonthView(
+          context: context,
+          year: year,
+          month: month,
+          padding: monthViewPadding,
+          currentDateColor: currentDateColor,
+          highlightedDates: highlightedDates,
+          highlightedDateColor: highlightedDateColor,
+          monthNames: monthNames,
+          onTap: onMonthTap,
+          titleStyle: monthTitleStyle,
+        ),
+      );
 
       if (month % 3 == 0) {
-        monthRows.add(Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: List<MonthView>.from(monthRowChildren),
-        ));
+        monthRows.add(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: List<MonthView>.from(monthRowChildren),
+          ),
+        );
         monthRowChildren.clear();
       }
     }
 
-    return Column(
-      children: List<Row>.from(monthRows),
-    );
+    return Column(children: List<Row>.from(monthRows));
   }
 
   @override
@@ -78,20 +80,14 @@ class YearView extends StatelessWidget {
               onPressed: () {
                 onTapBack();
               },
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-              ),
+              icon: const Icon(Icons.arrow_back_ios, size: 18),
             ),
             YearTitle(year),
             IconButton(
               onPressed: () {
                 onTapForward();
               },
-              icon: const Icon(
-                Icons.arrow_forward_ios_rounded,
-                size: 18,
-              ),
+              icon: const Icon(Icons.arrow_forward_ios_rounded, size: 18),
             ),
           ],
         ),

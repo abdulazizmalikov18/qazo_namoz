@@ -12,23 +12,24 @@ class InformationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Ma’lumot"),
-      ),
+      appBar: AppBar(title: const Text("Ma’lumot")),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add_rounded),
         onPressed: () async {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const InformationCreateView(),
-          ));
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const InformationCreateView(),
+            ),
+          );
         },
       ),
       body: FutureBuilder(
         future: supabase.from('questions').select(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            final list =
-                snapshot.data!.map((e) => QuestionsModel.fromJson(e)).toList();
+            final list = snapshot.data!
+                .map((e) => QuestionsModel.fromJson(e))
+                .toList();
             return ListView.separated(
               padding: const EdgeInsets.all(16),
               itemBuilder: (context, index) => InkWell(

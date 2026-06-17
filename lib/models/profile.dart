@@ -16,10 +16,10 @@ class Profile {
   final String startDate;
 
   Profile.fromMap(Map<String, dynamic> map)
-      : id = map['id'],
-        username = map['username'],
-        createdAt = map['created_at'],
-        dayOfPuberty = map['day_of_puberty'],
-        startDate = map['start_date'],
-        birthday = map['birthday'];
+    : id = map['id'],
+      username = map['username'],
+      createdAt = map['created_at'],
+      dayOfPuberty = map['day_of_puberty'],
+      startDate = map['start_date'],
+      birthday = map['birthday'];
 }

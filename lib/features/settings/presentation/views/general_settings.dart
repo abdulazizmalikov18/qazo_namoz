@@ -72,25 +72,19 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                 const Text("Tug’ilgan kun"),
                 TextFormField(
                   controller: birthday,
-                  decoration: const InputDecoration(
-                    hintText: "24.11.2000",
-                  ),
+                  decoration: const InputDecoration(hintText: "24.11.2000"),
                 ),
                 SizedBox(height: 32),
                 const Text("Birinchi ehtilom/hayz payti"),
                 TextFormField(
                   controller: dayOfPuberty,
-                  decoration: const InputDecoration(
-                    hintText: "24.11.2000",
-                  ),
+                  decoration: const InputDecoration(hintText: "24.11.2000"),
                 ),
                 SizedBox(height: 32),
                 const Text("Namoz boshlangan kun"),
                 TextFormField(
                   controller: startDate,
-                  decoration: const InputDecoration(
-                    hintText: "24.11.2000",
-                  ),
+                  decoration: const InputDecoration(hintText: "24.11.2000"),
                 ),
                 SizedBox(height: 32),
               ],
@@ -100,10 +94,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: WButton(
-          onTap: () {},
-          text: "Saqlash",
-        ),
+        child: WButton(onTap: () {}, text: "Saqlash"),
       ),
     );
   }

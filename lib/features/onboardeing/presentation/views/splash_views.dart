@@ -14,9 +14,7 @@ class _SplashViewsState extends State<SplashViews> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.green,
-      body: Center(
-        child: AppIcons.logo.svg(color: Colors.white),
-      ),
+      body: Center(child: AppIcons.logo.svg(color: Colors.white)),
     );
   }
 }

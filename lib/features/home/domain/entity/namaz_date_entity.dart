@@ -6,10 +6,7 @@ class NamazDataEntity extends Equatable {
   @NamazConverter()
   final List<NamazEntity> namaz;
 
-  const NamazDataEntity({
-    this.dateTime = "",
-    this.namaz = const [],
-  });
+  const NamazDataEntity({this.dateTime = "", this.namaz = const []});
 
   @override
   List<Object?> get props => [dateTime, namaz];

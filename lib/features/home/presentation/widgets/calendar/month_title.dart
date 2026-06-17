@@ -6,10 +6,7 @@ class MonthTitle extends StatelessWidget {
     super.key,
     required this.month,
     this.monthNames,
-    this.style = const TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
-    ),
+    this.style = const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
   });
 
   final int month;

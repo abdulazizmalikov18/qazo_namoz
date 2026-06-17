@@ -22,19 +22,13 @@ class RegisterCheckView extends StatelessWidget {
             Text(
               "Sizda umumiy hisobda $day kun qazo namozlari bor ekan. ",
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
             ),
             const Text(
               "Ularni ado qilishga hoziroq kirishishingiz mumkin. ",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            )
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
           ],
         ),
       ),

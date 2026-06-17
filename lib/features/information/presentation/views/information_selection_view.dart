@@ -21,10 +21,7 @@ class InformationSelectionView extends StatelessWidget {
             SizedBox(height: 12),
             Text(
               model.questions,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 24),
             const Text(
@@ -34,10 +31,7 @@ class InformationSelectionView extends StatelessWidget {
             SizedBox(height: 12),
             Text(
               model.commit,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ],
         ),

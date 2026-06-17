@@ -9,7 +9,8 @@ part 'questions_model.g.dart';
 
 List<QuestionsModel> questionsModelFromJson(String str) =>
     List<QuestionsModel>.from(
-        json.decode(str).map((x) => QuestionsModel.fromJson(x)));
+      json.decode(str).map((x) => QuestionsModel.fromJson(x)),
+    );
 
 String questionsModelToJson(List<QuestionsModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

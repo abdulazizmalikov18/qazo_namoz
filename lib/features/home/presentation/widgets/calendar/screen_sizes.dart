@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Divides screen sizes into three categories.
-enum ScreenSizes {
-  small,
-  medium,
-  large,
-}
+enum ScreenSizes { small, medium, large }
 
 /// Gets the screen size category of the screen.
 ScreenSizes screenSize(BuildContext context) {
@@ -34,8 +30,9 @@ double getMonthViewHeight(BuildContext context) {
 /// Some years will have extra vertical space equal to the size of a day number.
 double getYearViewHeight(BuildContext context) {
   const double topPadding = 40.0;
-  final double titleHeight =
-      screenSize(context) == ScreenSizes.small ? 26.0 : 31.0;
+  final double titleHeight = screenSize(context) == ScreenSizes.small
+      ? 26.0
+      : 31.0;
   const double dividerHeight = 16.0;
 
   return topPadding +

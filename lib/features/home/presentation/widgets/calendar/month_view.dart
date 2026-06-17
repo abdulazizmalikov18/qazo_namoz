@@ -53,10 +53,7 @@ class MonthView extends StatelessWidget {
         color = getDayNumberColor(DateTime(year, month, day));
       }
 
-      dayRowChildren.add(DayNumber(
-        day: day,
-        color: color,
-      ));
+      dayRowChildren.add(DayNumber(day: day, color: color));
 
       if ((day - 1 + firstWeekdayOfMonth) % DateTime.daysPerWeek == 0 ||
           day == daysInMonth) {
@@ -77,11 +74,7 @@ class MonthView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          MonthTitle(
-            month: month,
-            monthNames: monthNames,
-            style: titleStyle,
-          ),
+          MonthTitle(month: month, monthNames: monthNames, style: titleStyle),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: buildMonthDays(context),

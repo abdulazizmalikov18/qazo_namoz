@@ -33,7 +33,9 @@ class MentionsView extends StatelessWidget {
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 4),
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: Colors.blue,
@@ -46,14 +48,14 @@ class MentionsView extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(height: 8),
                 const Text(
                   "Alloh barcha kamchiliklardan pokdir.",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                )
+                ),
               ],
             ),
           ),

@@ -6,9 +6,15 @@ bool isCurrentDate(DateTime date) {
 
 /// Checks if the given date is a highlighted date.
 bool isHighlightedDate(DateTime date, List<DateTime> highlightedDates) {
-  return highlightedDates.any((DateTime highlightedDate) =>
-      date.isAtSameMomentAs(DateTime(
-          highlightedDate.year, highlightedDate.month, highlightedDate.day)));
+  return highlightedDates.any(
+    (DateTime highlightedDate) => date.isAtSameMomentAs(
+      DateTime(
+        highlightedDate.year,
+        highlightedDate.month,
+        highlightedDate.day,
+      ),
+    ),
+  );
 }
 
 /// Gets the number of days for the given month,
@@ -22,7 +28,8 @@ int getDaysInMonth(int year, int month) {
 /// Gets the name of the given month by its number,
 /// using either the supplied or default name.
 String getMonthName(int month, {List<String>? monthNames}) {
-  final List<String> names = monthNames ??
+  final List<String> names =
+      monthNames ??
       <String>[
         'Jan',
         'Feb',
@@ -41,13 +48,5 @@ String getMonthName(int month, {List<String>? monthNames}) {
 }
 
 List<String> getWeekName() {
-  return [
-    'Du',
-    'Se',
-    'Ch',
-    'Pa',
-    'Ju',
-    'Sh',
-    'Ya',
-  ];
+  return ['Du', 'Se', 'Ch', 'Pa', 'Ju', 'Sh', 'Ya'];
 }

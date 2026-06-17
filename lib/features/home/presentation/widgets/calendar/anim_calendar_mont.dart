@@ -96,16 +96,8 @@ class _AnimCalendarMonthState extends State<AnimCalendarMonth> {
                 onChanged: (value) {},
                 title: "Peshin",
               ),
-              WCheckBoxTile(
-                value: false,
-                onChanged: (value) {},
-                title: "Asr",
-              ),
-              WCheckBoxTile(
-                value: false,
-                onChanged: (value) {},
-                title: "Shom",
-              ),
+              WCheckBoxTile(value: false, onChanged: (value) {}, title: "Asr"),
+              WCheckBoxTile(value: false, onChanged: (value) {}, title: "Shom"),
               WCheckBoxTile(
                 value: false,
                 onChanged: (value) {},
@@ -115,7 +107,7 @@ class _AnimCalendarMonthState extends State<AnimCalendarMonth> {
                 value: false,
                 onChanged: (value) {},
                 title: "Vitri vojib",
-              )
+              ),
             ],
           ),
         );

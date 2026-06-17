@@ -6,10 +6,7 @@ part 'namaz_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class NamazModel extends NamazEntity {
-  const NamazModel({
-    super.flowed,
-    super.prayerTime,
-  });
+  const NamazModel({super.flowed, super.prayerTime});
 
   factory NamazModel.fromJson(Map<String, dynamic> json) =>
       _$NamazModelFromJson(json);

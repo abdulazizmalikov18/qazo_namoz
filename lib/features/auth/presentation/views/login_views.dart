@@ -41,11 +41,7 @@ class _LoginViewsState extends State<LoginViews> {
                     "Akkauntga kirish",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
-                  Image.asset(
-                    AppImages.icon,
-                    height: 36,
-                    width: 36,
-                  )
+                  Image.asset(AppImages.icon, height: 36, width: 36),
                 ],
               ),
               SizedBox(height: 120),
@@ -82,13 +78,15 @@ class _LoginViewsState extends State<LoginViews> {
                 padding: EdgeInsets.symmetric(vertical: 40),
                 child: WButton(
                   onTap: () {
-                    context.read<AuthBloc>().add(LoginEvent(
-                          password: _passwordController.text,
-                          phone: _emailController.text,
-                          onError: (error) {
-                            context.showErrorSnackBar(message: error);
-                          },
-                        ));
+                    context.read<AuthBloc>().add(
+                      LoginEvent(
+                        password: _passwordController.text,
+                        phone: _emailController.text,
+                        onError: (error) {
+                          context.showErrorSnackBar(message: error);
+                        },
+                      ),
+                    );
                   },
                   text: "Yuborish",
                   isDisabled: false,
@@ -117,9 +115,10 @@ class _LoginViewsState extends State<LoginViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color:
-                                const Color(0xFF0C1230).withValues(alpha: .07),
-                          )
+                            color: const Color(
+                              0xFF0C1230,
+                            ).withValues(alpha: .07),
+                          ),
                         ],
                       ),
                       child: Row(
@@ -144,9 +143,10 @@ class _LoginViewsState extends State<LoginViews> {
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 0),
-                            color:
-                                const Color(0xFF0C1230).withValues(alpha: .07),
-                          )
+                            color: const Color(
+                              0xFF0C1230,
+                            ).withValues(alpha: .07),
+                          ),
                         ],
                       ),
                       child: Row(

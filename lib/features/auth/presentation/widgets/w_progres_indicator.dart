@@ -28,7 +28,7 @@ class WProgresindecator extends StatelessWidget {
             color: AppColors.green,
             duration: const Duration(milliseconds: 300),
           ),
-          const Spacer()
+          const Spacer(),
         ],
       ),
     );

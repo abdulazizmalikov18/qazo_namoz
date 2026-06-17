@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qazo_namoz/features/home/presentation/widgets/calendar/screen_sizes.dart';
 
 class DayNumber extends StatelessWidget {
-  const DayNumber({
-    super.key,
-    required this.day,
-    this.color,
-  });
+  const DayNumber({super.key, required this.day, this.color});
 
   final int day;
   final Color? color;

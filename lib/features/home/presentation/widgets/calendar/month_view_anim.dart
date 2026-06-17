@@ -56,14 +56,16 @@ class MonthViewAnim extends StatelessWidget {
         color = getDayNumberColor(DateTime(year, month, day));
       }
 
-      dayRowChildren.add(DayNumberAnim(
-        day: day,
-        color: color,
-        size: size,
-        margin: margin,
-        dateTime: DateTime(year, month, day),
-        onTap: onTapDay,
-      ));
+      dayRowChildren.add(
+        DayNumberAnim(
+          day: day,
+          color: color,
+          size: size,
+          margin: margin,
+          dateTime: DateTime(year, month, day),
+          onTap: onTapDay,
+        ),
+      );
 
       if ((day - 1 + firstWeekdayOfMonth) % DateTime.daysPerWeek == 0 ||
           day == daysInMonth) {

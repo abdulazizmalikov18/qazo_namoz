@@ -21,11 +21,8 @@ class RegisterTitleView extends StatelessWidget {
             const Text(
               "Qazo namozlaringizni aniqlash uchun bizga ba’zi ma’lumotlaringiz kerak bo’ladi ",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-              ),
-            )
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            ),
           ],
         ),
       ),

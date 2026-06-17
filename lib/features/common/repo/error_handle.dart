@@ -3,9 +3,10 @@ import 'package:qazo_namoz/core/exceptions/exceptions.dart';
 import 'package:qazo_namoz/core/exceptions/failures.dart';
 
 class ErrorHandle {
-  Future<R> apiCantrol<T, R>(
-      {required Future<Response<T>?> Function() request,
-      required R Function(T response) body}) async {
+  Future<R> apiCantrol<T, R>({
+    required Future<Response<T>?> Function() request,
+    required R Function(T response) body,
+  }) async {
     try {
       final response = await request();
       if (response!.statusCode! >= 200 && response.statusCode! < 300) {

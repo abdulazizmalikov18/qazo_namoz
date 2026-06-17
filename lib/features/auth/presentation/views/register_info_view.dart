@@ -69,8 +69,8 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                       value: index.value == 0
                           ? 0.33
                           : index.value == 1
-                              ? 0.66
-                              : 1,
+                          ? 0.66
+                          : 1,
                       borderRadius: BorderRadius.circular(8),
                       color: AppColors.green,
                     ),
@@ -141,10 +141,10 @@ class RegisterBrithDay extends StatelessWidget {
           padding: const EdgeInsets.only(top: 32),
           child: Text(
             'Tug’ilgan kuningiz',
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         SizedBox(height: 40),
@@ -180,10 +180,10 @@ class RegisterEhtilam extends StatelessWidget {
           child: Text(
             'Birinchi marta ehtilom/hayz paytingizni kiriting',
             textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         SizedBox(height: 12),
@@ -192,8 +192,9 @@ class RegisterEhtilam extends StatelessWidget {
           child: Text(
             'Musulmon kishiga shu vaqtdan boshlab namoz farz bo’ladi.',
             textAlign: TextAlign.center,
-            style:
-                Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge!.copyWith(fontSize: 16),
           ),
         ),
         SizedBox(height: 40),
@@ -229,10 +230,10 @@ class RegisterStartPrayer extends StatelessWidget {
           child: Text(
             'Namozni boshlagan vaqtingiz',
             textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         SizedBox(height: 12),
@@ -241,8 +242,9 @@ class RegisterStartPrayer extends StatelessWidget {
           child: Text(
             'Shunga qarab qazo namozlaringiz hisoblanadi',
             textAlign: TextAlign.center,
-            style:
-                Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge!.copyWith(fontSize: 16),
           ),
         ),
         SizedBox(height: 40),
@@ -280,10 +282,10 @@ class RegisterConfirmation extends StatelessWidget {
             child: Text(
               'Tasdiqlash',
               textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge!
-                  .copyWith(fontSize: 24, fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
           SizedBox(height: 12),
@@ -292,8 +294,9 @@ class RegisterConfirmation extends StatelessWidget {
             child: Text(
               'Ma’lumotlaringiz to’g’riligini tekshiring',
               textAlign: TextAlign.center,
-              style:
-                  Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge!.copyWith(fontSize: 16),
             ),
           ),
           SizedBox(height: 40),
@@ -329,18 +332,19 @@ class TitleInfo extends StatelessWidget {
         Expanded(
           child: Text(
             title,
-            style:
-                Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 16),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge!.copyWith(fontSize: 16),
           ),
         ),
         Expanded(
           child: Text(
             info,
             textAlign: TextAlign.end,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ],

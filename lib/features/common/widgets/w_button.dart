@@ -66,12 +66,13 @@ class WButton extends StatelessWidget {
               ? Center(child: CupertinoActivityIndicator(color: textColor))
               : DefaultTextStyle(
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        height: 1.36,
-                        color: textColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                  child: child ??
+                    height: 1.36,
+                    color: textColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  child:
+                      child ??
                       Text(
                         text,
                         style: textStyle,

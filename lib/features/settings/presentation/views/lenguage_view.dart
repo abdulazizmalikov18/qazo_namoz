@@ -26,10 +26,7 @@ class _LenguageViewState extends State<LenguageView> {
             const Divider(),
             ListTile(
               contentPadding: EdgeInsets.zero,
-              leading: Image.asset(
-                AppImages.uz,
-                height: 36,
-              ),
+              leading: Image.asset(AppImages.uz, height: 36),
               title: const Text("O’zbek tili"),
             ),
             const Divider(),

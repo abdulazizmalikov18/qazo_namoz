@@ -20,10 +20,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(const AuthState()) {
     on<GetMeEvent>((event, emit) async {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-      emit(state.copyWith(
-        status: FormzSubmissionStatus.failure,
-        statusAuth: AuthenticationStatus.unauthenticated,
-      ));
+      emit(
+        state.copyWith(
+          status: FormzSubmissionStatus.failure,
+          statusAuth: AuthenticationStatus.unauthenticated,
+        ),
+      );
     });
     on<LoginEvent>((event, emit) async {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
@@ -32,10 +34,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           email: event.phone,
           password: event.password,
         );
-        emit(state.copyWith(
-          status: FormzSubmissionStatus.success,
-          statusAuth: AuthenticationStatus.authenticated,
-        ));
+        emit(
+          state.copyWith(
+            status: FormzSubmissionStatus.success,
+            statusAuth: AuthenticationStatus.authenticated,
+          ),
+        );
       } on AuthException catch (error) {
         event.onError(error.message);
       } catch (_) {
@@ -50,7 +54,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           email: event.phone,
           password: event.password,
           data: {
-            'username': event.phone.substring(0, event.phone.indexOf('@'))
+            'username': event.phone.substring(0, event.phone.indexOf('@')),
           },
         );
         event.onSucces();

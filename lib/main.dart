@@ -12,7 +12,8 @@ void main() async {
   Logger.root.onRecord.listen((record) {
     if (kDebugMode) {
       print(
-          '[${record.loggerName}] ${record.level.name}: ${record.time}: ${record.message}');
+        '[${record.loggerName}] ${record.level.name}: ${record.time}: ${record.message}',
+      );
 
       if (record.error != null) {
         print(record.error);
